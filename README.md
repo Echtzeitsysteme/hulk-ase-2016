@@ -14,7 +14,7 @@ We evaluate HULK on an established corpus of 16 (TODO: check) open-source Java p
 
 - [Moha et al.: DECOR - A Method for the Specification and Detection of Code and Design Smells. In: Transactions on Software Engineering, vol. 36, 2010.](http://www.irisa.fr/triskell/publis/2009/Moha09d.pdf)
 - [Khomh et al.: BDTEX - A GQM-based Bayesian Approach for the Detection of Antipatterns. In: Journal of Systems and Software, vol. 84, 2011.](http://dl.acm.org/citation.cfm?id=1942375)
-- [Ujhelyi et al.: Anti-Pattern Detection with Model Queries: A Comparison of Approaches](http://publicatio.bibl.u-szeged.hu/4761/1/2498771.pdf)
+- [Ujhelyi et al.: Anti-Pattern Detection with Model Queries: A Comparison of Approaches. In: Proceedings of CSMR-WCRE 2014.](http://publicatio.bibl.u-szeged.hu/4761/1/2498771.pdf)
 
 Based on these papers and our own investigations for simple examples, the following projects has been selected for the evaluation corpus:
 
