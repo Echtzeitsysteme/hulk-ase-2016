@@ -26,11 +26,11 @@ Based on these papers and our own investigations for simple examples, the follow
 - [JEdit, version 4.0](https://sourceforge.net/projects/jedit/files/jedit/4.0/): an open-source text editor
 - [JSciCalc, version 2.1.0](https://sourceforge.net/projects/jscicalc/files/jscicalc/): an open-source scientific calculator
 - [JTransforms, version 3.1](https://sites.google.com/site/piotrwendykier/software/jtransforms): an open-source FFT library
-- [JUnit, version 3.8.2]
-- [log4j, version 1.2.17]
-- [Lucene, version 1.4.3]
-- [Nutch, version 0.9]
-- [PMD, version 1.8]
-- [QuickUML, version 2001]
-- [SvnKit, version 1.8.12]
-- [Xerces, version 2.7.0]
+- [JUnit, version 3.8.2](http://repo1.maven.org/maven2/junit/junit/3.8.2/): an open-source unit testing framework
+- [log4j, version 1.2.17](https://logging.apache.org/log4j/1.2/source-repository.html): an open-source logging lramework for Java
+- [Lucene, version 1.4.3](http://archive.apache.org/dist/lucene/java/): an open-source indexing and search engine
+- [Nutch, version 0.9](http://archive.apache.org/dist/nutch/): an open-source Web crawler
+- [PMD, version 3.9](https://sourceforge.net/projects/pmd/files/pmd/3.9/): an open-source static code analyzer
+- [QuickUML, version 2001](https://sourceforge.net/projects/quj/files/): an open-source, light-weight UML editor
+- [SvnKit, version 1.8.12](http://svnkit.com/download.php): an open-source Subversion library
+- [Xerces, version 2.7.0](http://archive.apache.org/dist/xml/xerces-j/): an open-source XML parser
