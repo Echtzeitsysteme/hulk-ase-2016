@@ -1,4 +1,4 @@
-# HULK - Continuous Design Flaw Detection
+# HULK - Continuous Object-Oriented Design Flaw Detection
 
 TODO: Here comes the abstract
 
