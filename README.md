@@ -1,6 +1,26 @@
 # HULK - Continuous Object-Oriented Design Flaw Detection
 
-TODO: Here comes the abstract
+Design flaws in object-oriented programs may seriously corrupt code 
+quality thus increasing the risk for introducing subtle errors 
+during software maintenance and evolution. 
+Most recent approaches identify design flaws in an ad-hoc manner, either focusing on 
+software metrics, locally restricted code smells, or on coarse-grained 
+architectural anti-patterns.
+In this paper, we utilize an abstract program model capturing high-level
+object-oriented code entities, further augmented with qualitative and 
+quantitative design-related information such as coupling/cohesion.
+Based on this model, we propose a comprehensive methodology for specifying 
+object-oriented design flaws by means 
+of compound rules integrating code metrics, 
+code smells and anti-patterns in a modular way. 
+This approach allows for efficient, automated design-flaw detection through 
+incremental multi-pattern matching, by facilitating
+systematic information reuse among multiple detection rules 
+as well as between subsequent detection runs on continuously evolving programs.
+
+This site contains the source code of our tool implementation HULK which comprises well-known anti-patterns for Java programs, as well as the results of our experimental evaluation which show high detection precision, 
+scalability to real-size programs, 
+as well as a remarkable gain in efficiency due to information reuse.
 
 HULK is a tool prototype to support object-oriented software development by continuously detecting design flaws over the version history. As a result, an annotated model of the program containing design flaw information is created. Moreover, the annotations also appear in the source code, effectively supporting maintenance decisions.
 
@@ -10,7 +30,7 @@ TODO
 
 ## Evaluation
 
-We evaluate HULK on an established corpus of 16 (TODO: check) open-source Java projects selected from related literature on anti-pattern and code smell detection. Sources for the corpus are:
+We evaluate HULK on an established corpus of 13 (TODO: check) open-source Java projects selected from related literature on anti-pattern and code smell detection. Sources for the corpus are:
 
 - [Moha et al.: DECOR - A Method for the Specification and Detection of Code and Design Smells. In: Transactions on Software Engineering, vol. 36, 2010.](http://www.irisa.fr/triskell/publis/2009/Moha09d.pdf)
 - [Khomh et al.: BDTEX - A GQM-based Bayesian Approach for the Detection of Antipatterns. In: Journal of Systems and Software, vol. 84, 2011.](http://dl.acm.org/citation.cfm?id=1942375)
