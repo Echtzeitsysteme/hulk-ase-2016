@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.ui.menus">
+    <menuContribution allPopups="false" locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?after=additions">
+      <menu label="Hulk">
+        <command commandId="hulk.command.scan" label="Scan for Anti-Pattern" style="push"/>
+      </menu>
+    </menuContribution>
+  </extension>
+  <extension point="org.eclipse.ui.commands">
+    <command defaultHandler="org.gravity.hulk.ui.handlers.scan.HulkScanHandler" id="hulk.command.scan" name="Scan for Anti-Pattern">
+      <defaultHandler class="org.gravity.hulk.ui.handlers.scan.HulkScanHandler">
+        <parameter name="Hulk.parameter1" value="Hulk.parameter1"/>
+      </defaultHandler>
+    </command>
+  </extension>
+</plugin>

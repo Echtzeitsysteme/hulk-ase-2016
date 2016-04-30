@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.0"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package class="org.gravity.eval.ase.deltas.DeltasPackage" genModel="model/Deltas.genmodel" uri="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore"/>
+  </extension>
+</plugin>

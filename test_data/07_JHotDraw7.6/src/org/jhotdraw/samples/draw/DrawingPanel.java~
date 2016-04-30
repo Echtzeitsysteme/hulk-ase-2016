@@ -1,0 +1,736 @@
+/*
+ * @(#)DrawingPanel.java  1.0  11. März 2004
+ *
+ * Copyright (c) 2003-2006 Werner Randelshofer
+ * Staldenmattweg 2, CH-6405 Immensee, Switzerland
+ * All rights reserved.
+ *
+ * This software is the confidential and proprietary information of
+ * Werner Randelshofer. ("Confidential Information").  You shall not
+ * disclose such Confidential Information and shall use it only in
+ * accordance with the terms of the license agreement you entered into
+ * with Werner Randelshofer.
+ */
+
+package ch.randelshofer.draw.samples.draw;
+
+import ch.randelshofer.app.action.*;
+import ch.randelshofer.draw.ArrowTip;
+import ch.randelshofer.draw.AttributedFigure;
+import ch.randelshofer.draw.BezierFigure;
+import ch.randelshofer.draw.BezierTool;
+import ch.randelshofer.draw.ConnectionTool;
+import ch.randelshofer.draw.CreationTool;
+import ch.randelshofer.draw.DefaultDrawing;
+import ch.randelshofer.draw.DefaultDrawingEditor;
+import ch.randelshofer.draw.DelegationSelectionTool;
+import ch.randelshofer.draw.Drawing;
+import ch.randelshofer.draw.DrawingEditor;
+import ch.randelshofer.draw.DrawingView;
+import ch.randelshofer.draw.EllipseFigure;
+import ch.randelshofer.draw.LineConnection;
+import ch.randelshofer.draw.LineDecoration;
+import ch.randelshofer.draw.LineFigure;
+import ch.randelshofer.draw.RectangleFigure;
+import ch.randelshofer.draw.RoundRectangleFigure;
+import ch.randelshofer.draw.TextAreaFigure;
+import ch.randelshofer.draw.TextAreaTool;
+import ch.randelshofer.draw.TextFigure;
+import ch.randelshofer.draw.TextTool;
+import ch.randelshofer.draw.Tool;
+import ch.randelshofer.draw.ToolEvent;
+import ch.randelshofer.draw.ToolListener;
+import ch.randelshofer.draw.ui.*;
+import ch.randelshofer.undo.UndoRedoManager;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.event.*;
+/**
+ * DrawingPanel.
+ *
+ * @author  Werner Randelshofer
+ * @version 1.0 11. März 2004  Created.
+ */
+public class DrawingPanel extends JPanel implements ToolListener  {
+    private LinkedList<Action> toolbarActions;
+    private LinkedList<Action> drawingActions;
+    private LinkedList<Action> selectionActions;
+    private UndoRedoManager undoManager;
+    private Drawing drawing;
+    private DrawingEditor editor;
+    
+    private class ToolButtonListener implements ItemListener {
+        private Tool tool;
+        public ToolButtonListener(Tool t) {
+            this.tool = t;
+        }
+        public void itemStateChanged(ItemEvent evt) {
+            if (evt.getStateChange() == ItemEvent.SELECTED) {
+                setTool(tool);
+            }
+        }
+    }
+    
+    
+    /** Creates new instance. */
+    public DrawingPanel() {
+        initComponents();
+        undoManager = new UndoRedoManager();
+        editor = new DefaultDrawingEditor();
+        editor.add(drawingView);
+        initTools();
+        
+        DefaultDrawing drawing = new DefaultDrawing();
+        drawingView.setDrawing(drawing);
+        drawing.addUndoableEditListener(undoManager);
+    }
+    
+    public void setDrawing(Drawing d) {
+        undoManager.discardAllEdits();
+        drawingView.getDrawing().removeUndoableEditListener(undoManager);
+        drawingView.setDrawing(d);
+        d.addUndoableEditListener(undoManager);
+    }
+    public Drawing getDrawing() {
+        return drawingView.getDrawing();
+    }
+    public DrawingView getView() {
+        return drawingView;
+    }
+    public DrawingEditor getEditor() {
+        return editor;
+    }
+    
+    private void initTools() {
+        Tool selectionTool = new DelegationSelectionTool(getDrawingActions(), getSelectionActions());
+        editor.setTool(selectionTool);
+        selectionToolButton.addItemListener(
+        new ToolButtonListener(selectionTool)
+        );
+        
+        initCreationTools();
+        initLineAttributeTools();
+        initColorAttributeTools();
+        initFontAttributeTools();
+        
+        JToolBar toolbar = actionToolbar1;
+        for (Iterator i=getToolbarActions().iterator(); i.hasNext(); ) {
+            Action a = (Action) i.next();
+            if (a == null) {
+                toolbar = actionToolbar2;
+            } else {
+                JButton button = new JButton();
+                button.putClientProperty("hideActionText", Boolean.TRUE);
+                button.setAction(a);
+                toolbar.add(a);
+            }
+        }
+        toolbar.addSeparator();
+        createZoomToolBarButtons(actionToolbar1);
+    }
+    private void initCreationTools() {
+        HashMap<String,Object> attributes = new HashMap<String,Object>();
+        attributes.put(BezierFigure.START_DECORATION, null);
+        attributes.put(BezierFigure.END_DECORATION, null);
+        lineToolButton.addItemListener(
+        new ToolButtonListener(new CreationTool(new LineFigure(), attributes))
+        );
+        attributes = new HashMap<String,Object>();
+        attributes.put(BezierFigure.START_DECORATION, null);
+        attributes.put(BezierFigure.END_DECORATION, new ArrowTip());
+        arrowToolButton.addItemListener(
+        new ToolButtonListener(new CreationTool(new LineFigure(), attributes))
+        );
+        connectionToolButton.addItemListener(
+        new ToolButtonListener(new ConnectionTool(new LineConnection()))
+        );
+        // Implement ElbowBezierLayouter
+        elbowConnectionToolButton.addItemListener(
+        new ToolButtonListener(new ConnectionTool(new LineConnection()))
+        );
+        rectangleToolButton.addItemListener(
+        new ToolButtonListener(new CreationTool(new RectangleFigure()))
+        );
+        roundRectangleToolButton.addItemListener(
+        new ToolButtonListener(new CreationTool(new RoundRectangleFigure()))
+        );
+        ellipseToolButton.addItemListener(
+        new ToolButtonListener(new CreationTool(new EllipseFigure()))
+        );
+        textToolButton.addItemListener(
+        new ToolButtonListener(new TextTool(new TextFigure()))
+        );
+        textAreaToolButton.addItemListener(
+        new ToolButtonListener(new TextAreaTool(new TextAreaFigure()))
+        );
+        scribbleToolButton.addItemListener(
+        new ToolButtonListener(new BezierTool(new BezierFigure()))
+        );
+        polygonToolButton.addItemListener(
+        new ToolButtonListener(new BezierTool(new BezierFigure(true)))
+        );
+    }
+    private void initLineAttributeTools() {
+        float[] widths = {1f, 3f, 5f, 7f, 9f, 11f};
+        for (int i=0; i < widths.length; i++) {
+            lineWidthPopupButton.add(
+            new AttributeAction(
+            editor,
+            AttributedFigure.STROKE_WIDTH,
+            new Float(widths[i]),
+            Integer.toString((int) widths[i]),
+            new StrokeIcon(new BasicStroke(widths[i], BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL))
+            )
+            );
+        }
+        lineDecorationPopupButton.setColumnCount(2, false);
+        LineDecoration[] decorations = {
+            new ArrowTip(0.35, 12, 11.3),
+            new ArrowTip(0.35, 13, 7),
+            null
+        };
+        for (int i=0; i < decorations.length; i++) {
+            lineDecorationPopupButton.add(
+            new AttributeAction(
+            editor,
+            BezierFigure.START_DECORATION,
+            decorations[i],
+            null,
+            new LineDecorationIcon(decorations[i], true)
+            )
+            );
+            lineDecorationPopupButton.add(
+            new AttributeAction(
+            editor,
+            BezierFigure.END_DECORATION,
+            decorations[i],
+            null,
+            new LineDecorationIcon(decorations[i], false)
+            )
+            );
+        }
+        float[][] dashes = {
+            null,
+            {4f, 4f},
+            {2f, 2f},
+            {4f, 2f},
+            {2f, 4f},
+            {8f, 2f},
+            {6f, 2f, 2f, 2f}
+        };
+        for (int i=0; i < dashes.length; i++) {
+            lineDashesPopupButton.add(
+            new AttributeAction(
+            editor,
+            AttributedFigure.STROKE_DASHES,
+            dashes[i],
+            null,
+            new StrokeIcon(new BasicStroke(2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 10f, dashes[i], 0))
+            )
+            );
+        }
+    }
+    private void initColorAttributeTools() {
+        lineColorPopupButton.setAction(new DefaultAttributeAction(editor, AttributedFigure.STROKE_COLOR), new Rectangle(0, 0, 16, 16));
+        lineColorPopupButton.setColumnCount(8, false);
+        fillColorPopupButton.setAction(new DefaultAttributeAction(editor, AttributedFigure.FILL_COLOR), new Rectangle(0, 0, 16, 16));
+        fillColorPopupButton.setColumnCount(8, false);
+        textColorPopupButton.setAction(new DefaultAttributeAction(editor, TextFigure.TEXT_COLOR), new Rectangle(0, 0, 16, 16));
+        textColorPopupButton.setColumnCount(8, false);
+        Object[] colors = {
+            "Cayenne", new Color(128, 0, 0),
+            "Asparagus", new Color(128, 128, 0),
+            "Clover", new Color(0, 128, 0),
+            "Teal", new Color(0, 128, 128),
+            "Midnight", new Color(0, 0, 128),
+            "Plum", new Color(128, 0, 128),
+            "Tin", new Color(127, 127, 127),
+            "Nickel", new Color(128, 128, 128),
+            
+            "Maraschino", new Color(255, 0, 0),
+            "Lemon", new Color(255, 255, 0),
+            "Spring", new Color(0, 255, 0),
+            "Turquoise", new Color(0, 255, 255),
+            "Blueberry", new Color(0, 0, 255),
+            "Magenta", new Color(255, 0, 255),
+            "Steel", new Color(102, 102, 102),
+            "Aluminium", new Color(153, 153, 153),
+            
+            "Salmon", new Color(255, 102, 102),
+            "Banana", new Color(255, 255, 102),
+            "Flora", new Color(102, 255, 102),
+            "Ice", new Color(102, 255, 255),
+            "Orchid", new Color(102, 102, 255),
+            "Bubblegum", new Color(255, 102, 255),
+            "Iron", new Color(76, 76, 76),
+            "Magnesium", new Color(179, 179, 179),
+            
+            
+            "Mocha", new Color(128, 64, 0),
+            "Fern", new Color(64, 128, 0),
+            "Moss", new Color(0, 128, 64),
+            "Ocean", new Color(0, 64, 128),
+            "Eggplant", new Color(64, 0, 128),
+            "Maroon", new Color(128, 0, 64),
+            "Tungsten", new Color(51, 51, 51),
+            "Silver", new Color(204, 204, 204),
+            
+            
+            "Tangerine", new Color(255, 128, 0),
+            "Lime", new Color(128, 255, 0),
+            "Sea Foam", new Color(0, 255, 128),
+            "Aqua", new Color(0, 128, 255),
+            "Grape", new Color(128, 0, 255),
+            "Strawberry", new Color(255, 0, 128),
+            
+            "Lead", new Color(25, 25, 25),
+            "Mercury", new Color(230, 230, 230),
+            
+            "Cantaloupe", new Color(255, 204, 102),
+            "Honeydew", new Color(204, 255, 102),
+            "Spindrift", new Color(102, 255, 204),
+            "Sky", new Color(102, 204, 255),
+            "Lavender", new Color(204, 102, 255),
+            "Carnation", new Color(255, 111, 207),
+            
+            "Licorice", new Color(0, 0, 0),
+            "Snow", new Color(255, 255, 255),
+            
+            "Transparent", null
+        };
+        for (int i=0; i < colors.length; i+= 2) {
+            lineColorPopupButton.add(
+            new AttributeAction(
+            editor,
+            AttributedFigure.STROKE_COLOR,
+            colors[i+1],
+            new ColorIcon((Color) colors[i+1])
+            )
+            );
+            fillColorPopupButton.add(
+            new AttributeAction(
+            editor,
+            AttributedFigure.FILL_COLOR,
+            colors[i+1],
+            new ColorIcon((Color) colors[i+1])
+            )
+            );
+            textColorPopupButton.add(
+            new AttributeAction(
+            editor,
+            TextFigure.TEXT_COLOR,
+            colors[i+1],
+            new ColorIcon((Color) colors[i+1])
+            )
+            );
+        }
+        
+        ImageIcon chooserIcon = new ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_colorchooser.png"));
+        
+        lineColorPopupButton.add(
+        new ColorChooserAction(
+        editor,
+        AttributedFigure.STROKE_COLOR,
+        chooserIcon
+        )
+        );
+        fillColorPopupButton.add(
+        new ColorChooserAction(
+        editor,
+        AttributedFigure.FILL_COLOR,
+        chooserIcon
+        )
+        );
+        textColorPopupButton.add(
+        new ColorChooserAction(
+        editor,
+        TextFigure.TEXT_COLOR,
+        chooserIcon
+        )
+        );
+        lineColorPopupButton.setIcon(new ColorAttributeIcon(editor, AttributedFigure.STROKE_COLOR, getClass().getResource("/ch/randelshofer/draw/images/attribute_linecolor.png")));
+        fillColorPopupButton.setIcon(new ColorAttributeIcon(editor, AttributedFigure.FILL_COLOR, getClass().getResource("/ch/randelshofer/draw/images/attribute_fillcolor.png")));
+        textColorPopupButton.setIcon(new ColorAttributeIcon(editor, TextFigure.TEXT_COLOR, getClass().getResource("/ch/randelshofer/draw/images/attribute_textcolor.png")));
+    }
+    private void initFontAttributeTools() {
+        Font[] allFonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
+        HashSet<String> fontExclusionList = new HashSet<String>(Arrays.asList(new String[] {
+            // Mac OS X 10.3 Font Exclusion List
+            "#GungSeo", "#HeadLineA", "#PCMyungjo", "#PilGi", "Al Bayan", "Apple LiGothic",
+            "Apple LiSung", "AppleMyungjo", "Arial Hebrew", "Ayuthaya", "Baghdad",
+            "BiauKai", "Charcoal CY", "Corsiva Hebrew", "DecoType Naskh",
+            "Devanagari MT", "Fang Song", "GB18030 Bitmap", "Geeza Pro",
+            "Geezah", "Geneva CY", "Gujarati MT", "Gurmukhi MT", "Hei",
+            "Helvetica CY", "Hiragino Kaku Gothic Std", "Hiragino Maru Gothic Pro",
+            "Hiragino Mincho Pro", "Hiragino Kaku Gothic Pro", "Kai",
+            "Krungthep", "KufiStandardGK", "LiHei Pro", "LiSong Pro", "Monaco CY", "Nadeem",
+            "New Peninim MT", "Osaka", "Raanana", "STFangsong", "STHeiti",
+            "STKaiti", "STSong", "Sathu", "Silom",
+            "Thonburi", "Times CY",
+            
+            // Windows XP Professional Font Exclusion List
+            "Arial Unicode MS", "Batang", "Estrangelo Edessa", "Gautami",
+            "Latha", "Lucida Sans Unicode", "Mangal", "Marlett",
+            "MS Mincho", "MS Outlook", "MV Boli", "OCR-B-10 BT",
+            "Raavi", "Shruti", "SimSun", "Sylfaen", "Symbol", "Tunga",
+            "Wingdings", "Wingdings 2", "Wingdings 3",
+            "ZWAdobeF"
+        }));
+        LinkedList<Font> fontList = new LinkedList<Font>();
+        for (int i=0; i < allFonts.length; i++) {
+            if (! fontExclusionList.contains(allFonts[i].getFamily())) {
+                fontList.add(allFonts[i]);
+            }
+        }
+        allFonts = new Font[fontList.size()];
+        allFonts = (Font[]) fontList.toArray(allFonts);
+        Arrays.sort(allFonts, new Comparator<Font>() {
+            public int compare(Font f1, Font f2) {
+                int result = f1.getFamily().compareTo(f2.getFamily());
+                if (result == 0) {
+                    result = f1.getFontName().compareTo(f2.getFontName());
+                }
+                return result;
+            }
+        });
+        LinkedList<Font> fontFamilies = new LinkedList<Font>();
+        JMenu submenu = null;
+        for (int i=0; i < allFonts.length; i++) {
+            if (submenu != null) {
+                if (! allFonts[i].getFamily().equals(allFonts[i - 1].getFamily())) {
+                    submenu = null;
+                }
+            }
+            if (submenu == null) {
+                if (i < allFonts.length - 2
+                && allFonts[i].getFamily().equals(allFonts[i + 1].getFamily())) {
+                    fontFamilies.add(allFonts[i]);
+                    submenu = new JMenu(allFonts[i].getFamily());
+                    submenu.setFont(JPopupButton.itemFont);
+                    fontPopupButton.add(submenu);
+                    
+                }
+            }
+            Action action = new AttributeAction(
+            editor,
+            TextFigure.FONT_FACE,
+            allFonts[i],
+            (submenu == null) ? allFonts[i].getFamily() : allFonts[i].getFontName(),
+            null
+            );
+            
+            if (submenu == null) {
+                fontFamilies.add(allFonts[i]);
+                fontPopupButton.add(action);
+            } else {
+                JMenuItem item = submenu.add(action);
+                item.setFont(JPopupButton.itemFont);
+            }
+        }
+        fontPopupButton.setColumnCount( Math.max(1, fontFamilies.size()/16), true);
+        
+        boldToggleButton.addItemListener(new AttributeToggler(editor, TextFigure.FONT_BOLD, Boolean.TRUE, Boolean.FALSE));
+        italicToggleButton.addItemListener(new AttributeToggler(editor, TextFigure.FONT_ITALIC, Boolean.TRUE, Boolean.FALSE));
+        underlineToggleButton.addItemListener(new AttributeToggler(editor, TextFigure.FONT_UNDERLINED, Boolean.TRUE, Boolean.FALSE));
+        
+    }
+    private void createZoomToolBarButtons(JToolBar bar) {
+        JPopupButton zoomPopupButton = new JPopupButton();
+        
+        zoomPopupButton.setToolTipText("Zoom");
+        zoomPopupButton.setFocusable(false);
+        //zoomPopupButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/zoom.png")));
+        zoomPopupButton.setText("100 %");
+        
+        double[] factors = {5, 2, 1.5, 1.25, 1, 0.75, 0.5, 0.25, 0.10};
+        for (int i=0; i < factors.length; i++) {
+            zoomPopupButton.add(
+            new ZoomAction(
+            drawingView, factors[i], zoomPopupButton
+            )
+            );
+        }
+        
+        bar.add(zoomPopupButton);
+    }
+    private Collection<Action> getToolbarActions() {
+        if (toolbarActions == null) {
+            LinkedList<Action> a = new LinkedList<Action>();
+            a.add(undoManager.getUndoAction());
+            a.add(undoManager.getRedoAction());
+            a.add(null); // separator
+            a.add(new GroupAction(editor));
+            a.add(new UngroupAction(editor));
+            a.add(new BringToFrontAction(editor));
+            a.add(new SendToBackAction(editor));
+            toolbarActions = a;
+        }
+        
+        return toolbarActions;
+    }
+    private Collection<Action> getDrawingActions() {
+        if (drawingActions == null) {
+            LinkedList<Action> a = new LinkedList<Action>();
+            a.add(new SelectAllAction(editor));
+            drawingActions = a;
+        }
+        return drawingActions;
+    }
+    private Collection<Action> getSelectionActions() {
+        if (selectionActions == null) {
+            LinkedList<Action> a = new LinkedList<Action>();
+            a.add(new DuplicateAction(editor));
+            a.add(new DeleteAction());
+            a.add(null); // separator
+            a.add(new GroupAction(editor));
+            a.add(new UngroupAction(editor));
+            a.add(null); // separator
+            a.add(new BringToFrontAction(editor));
+            a.add(new SendToBackAction(editor));
+            selectionActions = a;
+        }
+        return selectionActions;
+    }
+    public void setTool(Tool newTool) {
+        Tool oldTool = editor.getTool();
+        if (oldTool != null && oldTool != newTool) {
+            oldTool.removeToolListener(this);
+        }
+        editor.setTool(newTool);
+        if (newTool != null) {
+            newTool.addToolListener(this);
+        }
+    }
+    public void areaInvalidated(ToolEvent e) {
+        // Empty
+    }
+    
+    public void toolDone(ToolEvent event) {
+        selectionToolButton.setSelected(true);
+    }
+
+    public void toolStarted(ToolEvent event) {
+    }
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
+     */
+    // <editor-fold defaultstate="collapsed" desc=" Generated Code ">//GEN-BEGIN:initComponents
+    private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
+
+        toolButtonGroup = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        creationToolbar = new javax.swing.JToolBar();
+        selectionToolButton = new javax.swing.JToggleButton();
+        lineToolButton = new javax.swing.JToggleButton();
+        arrowToolButton = new javax.swing.JToggleButton();
+        connectionToolButton = new javax.swing.JToggleButton();
+        elbowConnectionToolButton = new javax.swing.JToggleButton();
+        rectangleToolButton = new javax.swing.JToggleButton();
+        roundRectangleToolButton = new javax.swing.JToggleButton();
+        ellipseToolButton = new javax.swing.JToggleButton();
+        textToolButton = new javax.swing.JToggleButton();
+        textAreaToolButton = new javax.swing.JToggleButton();
+        scribbleToolButton = new javax.swing.JToggleButton();
+        polygonToolButton = new javax.swing.JToggleButton();
+        attributesToolbar = new javax.swing.JToolBar();
+        fillColorPopupButton = new ch.randelshofer.draw.ui.JPopupButton();
+        lineColorPopupButton = new ch.randelshofer.draw.ui.JPopupButton();
+        textColorPopupButton = new ch.randelshofer.draw.ui.JPopupButton();
+        lineWidthPopupButton = new ch.randelshofer.draw.ui.JPopupButton();
+        lineDecorationPopupButton = new ch.randelshofer.draw.ui.JPopupButton();
+        lineDashesPopupButton = new ch.randelshofer.draw.ui.JPopupButton();
+        fontPopupButton = new ch.randelshofer.draw.ui.JPopupButton();
+        boldToggleButton = new javax.swing.JToggleButton();
+        italicToggleButton = new javax.swing.JToggleButton();
+        underlineToggleButton = new javax.swing.JToggleButton();
+        actionToolbar1 = new javax.swing.JToolBar();
+        actionToolbar2 = new javax.swing.JToolBar();
+        scrollPane = new javax.swing.JScrollPane();
+        drawingView = new ch.randelshofer.draw.framework.DefaultDrawingView();
+
+        setLayout(new java.awt.BorderLayout());
+
+        jPanel1.setLayout(new java.awt.GridBagLayout());
+
+        creationToolbar.setFloatable(false);
+        toolButtonGroup.add(selectionToolButton);
+        selectionToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_select.png")));
+        selectionToolButton.setSelected(true);
+        selectionToolButton.setToolTipText("Objekte markieren");
+        creationToolbar.add(selectionToolButton);
+
+        toolButtonGroup.add(lineToolButton);
+        lineToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_line.png")));
+        lineToolButton.setToolTipText("Linie");
+        creationToolbar.add(lineToolButton);
+
+        toolButtonGroup.add(arrowToolButton);
+        arrowToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_arrow.png")));
+        arrowToolButton.setToolTipText("Pfeil");
+        creationToolbar.add(arrowToolButton);
+
+        toolButtonGroup.add(connectionToolButton);
+        connectionToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_link.png")));
+        connectionToolButton.setToolTipText("Gerade Verbindung");
+        creationToolbar.add(connectionToolButton);
+
+        toolButtonGroup.add(elbowConnectionToolButton);
+        elbowConnectionToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_elbowlink.png")));
+        elbowConnectionToolButton.setToolTipText("Gewinkelte Verbindung");
+        creationToolbar.add(elbowConnectionToolButton);
+
+        toolButtonGroup.add(rectangleToolButton);
+        rectangleToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_rectangle.png")));
+        rectangleToolButton.setToolTipText("Rechteck");
+        creationToolbar.add(rectangleToolButton);
+
+        toolButtonGroup.add(roundRectangleToolButton);
+        roundRectangleToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_roundrect.png")));
+        roundRectangleToolButton.setToolTipText("Abgerundetes Rechteck");
+        creationToolbar.add(roundRectangleToolButton);
+
+        toolButtonGroup.add(ellipseToolButton);
+        ellipseToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_ellipse.png")));
+        ellipseToolButton.setToolTipText("Ellipse");
+        creationToolbar.add(ellipseToolButton);
+
+        toolButtonGroup.add(textToolButton);
+        textToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_text.png")));
+        textToolButton.setToolTipText("Text");
+        creationToolbar.add(textToolButton);
+
+        toolButtonGroup.add(textAreaToolButton);
+        textAreaToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_textarea.png")));
+        textAreaToolButton.setToolTipText("Textfeld");
+        creationToolbar.add(textAreaToolButton);
+
+        toolButtonGroup.add(scribbleToolButton);
+        scribbleToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_scribble.png")));
+        scribbleToolButton.setToolTipText("Freihandlinie");
+        creationToolbar.add(scribbleToolButton);
+
+        toolButtonGroup.add(polygonToolButton);
+        polygonToolButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/tool_polygon.png")));
+        polygonToolButton.setToolTipText("Freihandform");
+        creationToolbar.add(polygonToolButton);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(creationToolbar, gridBagConstraints);
+
+        attributesToolbar.setFloatable(false);
+        fillColorPopupButton.setToolTipText("F\u00fcllfarbe");
+        fillColorPopupButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/attribute_fillcolor.png")));
+        attributesToolbar.add(fillColorPopupButton);
+
+        lineColorPopupButton.setToolTipText("Linienfarbe");
+        lineColorPopupButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/attribute_linecolor.png")));
+        attributesToolbar.add(lineColorPopupButton);
+
+        textColorPopupButton.setToolTipText("Schriftfarbe");
+        textColorPopupButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/attribute_textcolor.png")));
+        attributesToolbar.add(textColorPopupButton);
+
+        lineWidthPopupButton.setToolTipText("Linienst\u00e4rke");
+        lineWidthPopupButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/attribute_linewidth.png")));
+        attributesToolbar.add(lineWidthPopupButton);
+
+        lineDecorationPopupButton.setToolTipText("Pfeilspitzen");
+        lineDecorationPopupButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/attribute_linedecoration.png")));
+        attributesToolbar.add(lineDecorationPopupButton);
+
+        lineDashesPopupButton.setToolTipText("Strichart");
+        lineDashesPopupButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/attribute_linedashes.png")));
+        attributesToolbar.add(lineDashesPopupButton);
+
+        fontPopupButton.setToolTipText("Schriftart");
+        fontPopupButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/attribute_font.png")));
+        attributesToolbar.add(fontPopupButton);
+
+        boldToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/attribute_fontbold.png")));
+        boldToggleButton.setToolTipText("Fett");
+        attributesToolbar.add(boldToggleButton);
+
+        italicToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/attribute_fontitalic.png")));
+        italicToggleButton.setToolTipText("Kursiv");
+        attributesToolbar.add(italicToggleButton);
+
+        underlineToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ch/randelshofer/draw/images/attribute_fontunderline.png")));
+        underlineToggleButton.setToolTipText("Unterstrichen");
+        attributesToolbar.add(underlineToggleButton);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        jPanel1.add(attributesToolbar, gridBagConstraints);
+
+        actionToolbar1.setFloatable(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
+        jPanel1.add(actionToolbar1, gridBagConstraints);
+
+        actionToolbar2.setFloatable(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 0);
+        jPanel1.add(actionToolbar2, gridBagConstraints);
+
+        add(jPanel1, java.awt.BorderLayout.SOUTH);
+
+        scrollPane.setViewportView(drawingView);
+
+        add(scrollPane, java.awt.BorderLayout.CENTER);
+
+    }// </editor-fold>//GEN-END:initComponents
+    
+    
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToolBar actionToolbar1;
+    private javax.swing.JToolBar actionToolbar2;
+    private javax.swing.JToggleButton arrowToolButton;
+    private javax.swing.JToolBar attributesToolbar;
+    private javax.swing.JToggleButton boldToggleButton;
+    private javax.swing.JToggleButton connectionToolButton;
+    private javax.swing.JToolBar creationToolbar;
+    private ch.randelshofer.draw.framework.DefaultDrawingView drawingView;
+    private javax.swing.JToggleButton elbowConnectionToolButton;
+    private javax.swing.JToggleButton ellipseToolButton;
+    private ch.randelshofer.draw.ui.JPopupButton fillColorPopupButton;
+    private ch.randelshofer.draw.ui.JPopupButton fontPopupButton;
+    private javax.swing.JToggleButton italicToggleButton;
+    private javax.swing.JPanel jPanel1;
+    private ch.randelshofer.draw.ui.JPopupButton lineColorPopupButton;
+    private ch.randelshofer.draw.ui.JPopupButton lineDashesPopupButton;
+    private ch.randelshofer.draw.ui.JPopupButton lineDecorationPopupButton;
+    private javax.swing.JToggleButton lineToolButton;
+    private ch.randelshofer.draw.ui.JPopupButton lineWidthPopupButton;
+    private javax.swing.JToggleButton polygonToolButton;
+    private javax.swing.JToggleButton rectangleToolButton;
+    private javax.swing.JToggleButton roundRectangleToolButton;
+    private javax.swing.JToggleButton scribbleToolButton;
+    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JToggleButton selectionToolButton;
+    private javax.swing.JToggleButton textAreaToolButton;
+    private ch.randelshofer.draw.ui.JPopupButton textColorPopupButton;
+    private javax.swing.JToggleButton textToolButton;
+    private javax.swing.ButtonGroup toolButtonGroup;
+    private javax.swing.JToggleButton underlineToggleButton;
+    // End of variables declaration//GEN-END:variables
+    
+}

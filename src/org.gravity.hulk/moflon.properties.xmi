@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<MoflonPropertyContainer:MoflonPropertiesContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:MoflonPropertyContainer="platform:/plugin/MoflonPropertyContainer/model/MoflonPropertyContainer.ecore" projectName="org.gravity.hulk">
+  <dependencies value="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"/>
+  <dependencies value="platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.ecore"/>
+  <dependencies value="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore"/>
+  <dependencies value="platform:/plugin/org.moflon.core.dfs/model/Dfs.ecore"/>
+  <metaModelProject MetaModelProjectName="org.gravity.metamodels.hulk"/>
+  <replaceGenModel/>
+  <sdmCodegeneratorHandlerId value="DEMOCLES_ATTRIBUTES"/>
+</MoflonPropertyContainer:MoflonPropertiesContainer>

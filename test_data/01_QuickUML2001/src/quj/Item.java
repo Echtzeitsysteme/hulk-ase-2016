@@ -1,0 +1,398 @@
+/*
+ * Decompiled with CFR 0_114.
+ */
+package quj;
+
+import java.io.PrintStream;
+import java.io.Serializable;
+import java.util.Vector;
+import quj.Member;
+import quj.Method;
+
+class Item
+implements Serializable {
+    private Vector imports;
+    private Vector interfaces;
+    private Vector members;
+    private Vector methods;
+    private String packageName;
+    private String superClass;
+    private String name;
+    private boolean isInterfaceVar;
+    private boolean isAbstractVar;
+    private boolean isPublicVar;
+    private boolean isFinalVar;
+    private int x;
+    private int y;
+
+    Item() {
+    }
+
+    static Item buildItem() {
+        Item item = new Item();
+        item.setName("User");
+        item.getImports().addElement("java.util.*");
+        item.getImports().addElement("java.sql.*");
+        item.setSuperClass("OnebookPrimitive");
+        item.setPackage("onebook.data");
+        item.setPublic(true);
+        Member member = new Member();
+        member.setName("firstName");
+        member.setType("String");
+        member.setProtection("private");
+        Member member2 = new Member();
+        member2.setName("lastName");
+        member2.setType("String");
+        member2.setProtection("private");
+        Member member3 = new Member();
+        member3.setName("isAdmin");
+        member3.setType("boolean");
+        member3.setProtection("protected");
+        Vector vector = item.getMembers();
+        vector.addElement(member);
+        vector.addElement(member2);
+        vector.addElement(member3);
+        Method method = new Method();
+        method.setName("User");
+        method.setConstructor(true);
+        Method method2 = new Method();
+        method2.setName("getLastName");
+        method2.setType("String");
+        method2.setProtection("public");
+        Method method3 = new Method();
+        method3.setName("setAdmin");
+        method3.setArgument("isAdmin", "boolean");
+        method3.setType("void");
+        method3.getExceptions().addElement("NotFoundException");
+        Vector vector2 = item.getMethods();
+        vector2.addElement(method2);
+        vector2.addElement(method);
+        vector2.addElement(method3);
+        return item;
+    }
+
+    Vector getImports() {
+        if (this.imports == null) {
+            this.imports = new Vector();
+        }
+        return this.imports;
+    }
+
+    Vector getMembers() {
+        if (this.members == null) {
+            this.members = new Vector();
+        }
+        return this.members;
+    }
+
+    Vector getMethods() {
+        if (this.methods == null) {
+            this.methods = new Vector();
+        }
+        return this.methods;
+    }
+
+    Vector getInterfaces() {
+        if (this.interfaces == null) {
+            this.interfaces = new Vector();
+        }
+        return this.interfaces;
+    }
+
+    String getSuperClass() {
+        if (this.superClass == null) {
+            return "";
+        }
+        return this.superClass;
+    }
+
+    void setSuperClass(String string) {
+        this.superClass = string;
+    }
+
+    String getPackage() {
+        if (this.packageName == null) {
+            return "";
+        }
+        return this.packageName;
+    }
+
+    void setPackage(String string) {
+        this.packageName = string;
+    }
+
+    String getName() {
+        if (this.name == null) {
+            return "Undefined";
+        }
+        return this.name;
+    }
+
+    void setName(String string) {
+        this.name = string;
+    }
+
+    boolean isInterface() {
+        return this.isInterfaceVar;
+    }
+
+    void setInterface(boolean bl) {
+        this.isInterfaceVar = bl;
+    }
+
+    boolean isAbstract() {
+        return this.isAbstractVar;
+    }
+
+    void setAbstract(boolean bl) {
+        this.isAbstractVar = bl;
+    }
+
+    boolean isFinal() {
+        return this.isFinalVar;
+    }
+
+    void setFinal(boolean bl) {
+        this.isFinalVar = bl;
+    }
+
+    boolean isPublic() {
+        return this.isPublicVar;
+    }
+
+    void setPublic(boolean bl) {
+        this.isPublicVar = bl;
+    }
+
+    Method findMethod(String string) {
+        Vector vector = this.getMethods();
+        int n = 0;
+        while (n < vector.size()) {
+            Method method = (Method)vector.elementAt(n);
+            if (method.getName().equals(string)) {
+                return method;
+            }
+            ++n;
+        }
+        return null;
+    }
+
+    Member findMember(String string) {
+        Vector vector = this.getMembers();
+        int n = 0;
+        while (n < vector.size()) {
+            Member member = (Member)vector.elementAt(n);
+            if (member.getName().equals(string)) {
+                return member;
+            }
+            ++n;
+        }
+        return null;
+    }
+
+    String generateCode() {
+        Vector vector;
+        int n;
+        String string;
+        int n2;
+        Method method;
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("/* Generated by Quick UML for Java */\n\n");
+        if (!this.getPackage().equals("")) {
+            stringBuffer.append("package " + this.getPackage() + ";\n\n");
+        }
+        Vector vector2 = this.getImports();
+        int n3 = 0;
+        while (n3 < vector2.size()) {
+            stringBuffer.append("import " + (String)vector2.elementAt(n3) + ";\n");
+            if (n3 == vector2.size() - 1) {
+                stringBuffer.append("\n");
+            }
+            ++n3;
+        }
+        stringBuffer.append("/**\n");
+        stringBuffer.append(" *\n");
+        stringBuffer.append(" **/\n");
+        String string2 = "class";
+        if (this.isInterface()) {
+            string2 = "interface";
+        }
+        stringBuffer.append("public " + string2 + " " + this.getName() + " ");
+        if (!this.getSuperClass().equals("")) {
+            stringBuffer.append("extends " + this.getSuperClass() + " ");
+        }
+        if (this.getInterfaces().size() > 0) {
+            stringBuffer.append("implements ");
+            int n4 = 0;
+            while (n4 < this.getInterfaces().size()) {
+                stringBuffer.append((String)this.getInterfaces().elementAt(n4));
+                if (n4 == this.getInterfaces().size() - 1) {
+                    stringBuffer.append(" ");
+                } else {
+                    stringBuffer.append(", ");
+                }
+                ++n4;
+            }
+        }
+        stringBuffer.append("{\n\n");
+        vector2 = this.getMembers();
+        if (vector2.size() > 0) {
+            stringBuffer.append("    /* ===================================== */\n");
+            stringBuffer.append("    /* ==         Member Variables        == */\n");
+            stringBuffer.append("    /* ===================================== */\n\n");
+        }
+        int n5 = 0;
+        while (n5 < vector2.size()) {
+            Member member = (Member)vector2.elementAt(n5);
+            stringBuffer.append("    ");
+            if (!member.getProtection().equals("")) {
+                stringBuffer.append(member.getProtection() + " ");
+            }
+            if (member.isStatic()) {
+                stringBuffer.append("static ");
+            }
+            if (member.isFinal()) {
+                stringBuffer.append("final ");
+            }
+            stringBuffer.append(member.getType() + " ");
+            stringBuffer.append(member.getName());
+            if (!member.getDefaultValue().equals("")) {
+                stringBuffer.append(" = " + member.getDefaultValue());
+            }
+            stringBuffer.append(";\n\n");
+            ++n5;
+        }
+        vector2 = this.getMethods();
+        if (vector2.size() > 0) {
+            stringBuffer.append("    /* ===================================== */\n");
+            stringBuffer.append("    /* ==         Methods                 == */\n");
+            stringBuffer.append("    /* ===================================== */\n\n");
+        }
+        int n6 = 0;
+        while (n6 < vector2.size()) {
+            method = (Method)vector2.elementAt(n6);
+            if (method.isConstructor()) {
+                stringBuffer.append("    /**\n");
+                stringBuffer.append("     *\n");
+                stringBuffer.append("     **/\n");
+                stringBuffer.append("    ");
+                if (!method.getProtection().equals("")) {
+                    stringBuffer.append(method.getProtection() + " ");
+                }
+                if (method.isStatic()) {
+                    stringBuffer.append("static ");
+                }
+                if (method.isFinal()) {
+                    stringBuffer.append("final ");
+                }
+                if (!method.isConstructor()) {
+                    stringBuffer.append(method.getType() + " ");
+                }
+                stringBuffer.append(method.getName() + "(");
+                vector = method.getArgumentNames();
+                n2 = 0;
+                while (n2 < vector.size()) {
+                    string = (String)vector.elementAt(n2);
+                    stringBuffer.append(method.getArgument(string) + " " + string);
+                    if (n2 != vector.size() - 1) {
+                        stringBuffer.append(", ");
+                    }
+                    ++n2;
+                }
+                stringBuffer.append(") ");
+                if (method.getExceptions().size() > 0) {
+                    stringBuffer.append("throws ");
+                    n = 0;
+                    while (n < method.getExceptions().size()) {
+                        stringBuffer.append((String)method.getExceptions().elementAt(n));
+                        if (n == method.getExceptions().size() - 1) {
+                            stringBuffer.append(" ");
+                        } else {
+                            stringBuffer.append(", ");
+                        }
+                        ++n;
+                    }
+                }
+                stringBuffer.append("{\n\n");
+                stringBuffer.append("    }\n\n");
+            }
+            ++n6;
+        }
+        n2 = 0;
+        while (n2 < vector2.size()) {
+            method = (Method)vector2.elementAt(n2);
+            if (!method.isConstructor()) {
+                stringBuffer.append("    /**\n");
+                stringBuffer.append("     *\n");
+                stringBuffer.append("     **/\n");
+                stringBuffer.append("    ");
+                if (!method.getProtection().equals("")) {
+                    stringBuffer.append(method.getProtection() + " ");
+                }
+                if (method.isStatic()) {
+                    stringBuffer.append("static ");
+                }
+                if (method.isFinal()) {
+                    stringBuffer.append("final ");
+                }
+                if (!method.isConstructor()) {
+                    stringBuffer.append(method.getType() + " ");
+                }
+                stringBuffer.append(method.getName() + "(");
+                vector = method.getArgumentNames();
+                n = 0;
+                while (n < vector.size()) {
+                    string = (String)vector.elementAt(n);
+                    stringBuffer.append(method.getArgument(string) + " " + string);
+                    if (n != vector.size() - 1) {
+                        stringBuffer.append(", ");
+                    }
+                    ++n;
+                }
+                stringBuffer.append(") ");
+                if (method.getExceptions().size() > 0) {
+                    stringBuffer.append("throws ");
+                    int n7 = 0;
+                    while (n7 < method.getExceptions().size()) {
+                        stringBuffer.append((String)method.getExceptions().elementAt(n7));
+                        if (n7 == method.getExceptions().size() - 1) {
+                            stringBuffer.append(" ");
+                        } else {
+                            stringBuffer.append(", ");
+                        }
+                        ++n7;
+                    }
+                }
+                stringBuffer.append("{\n");
+                if (!method.getDefinition().equals("")) {
+                    stringBuffer.append("        " + method.getDefinition());
+                }
+                if (!method.getDefaultValue().equals("")) {
+                    stringBuffer.append("        return " + method.getDefaultValue() + ";");
+                }
+                stringBuffer.append("\n    }\n\n");
+            }
+            ++n2;
+        }
+        stringBuffer.append("}");
+        System.out.println("Generated code for " + this.getName() + " (in package '" + this.getPackage() + "')");
+        return stringBuffer.toString();
+    }
+
+    int getX() {
+        return this.x;
+    }
+
+    int getY() {
+        return this.y;
+    }
+
+    void setX(int n) {
+        this.x = n;
+    }
+
+    void setY(int n) {
+        this.y = n;
+    }
+}
+

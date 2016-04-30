@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.0" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="toolButtonGroup">
+    </Component>
+  </NonVisualComponents>
+  <AuxValues>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,44,0,0,2,13"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="South"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JToolBar" name="creationToolbar">
+          <Properties>
+            <Property name="floatable" type="boolean" value="false"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="0" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="17" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JToggleButton" name="selectionToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_select.png"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="toolTipText" type="java.lang.String" value="Objekte markieren"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="lineToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_line.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Linie"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="arrowToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_arrow.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Pfeil"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="connectionToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_link.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Gerade Verbindung"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="elbowConnectionToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_elbowlink.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Gewinkelte Verbindung"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="rectangleToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_rectangle.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Rechteck"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="roundRectangleToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_roundrect.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Abgerundetes Rechteck"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="ellipseToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_ellipse.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Ellipse"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="textToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_text.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Text"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="textAreaToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_textarea.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Textfeld"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="scribbleToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_scribble.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Freihandlinie"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="polygonToolButton">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="toolButtonGroup"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/tool_polygon.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Freihandform"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JToolBar" name="attributesToolbar">
+          <Properties>
+            <Property name="floatable" type="boolean" value="false"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="0" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="17" weightX="0.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
+          <SubComponents>
+            <Component class="ch.randelshofer.draw.ui.JPopupButton" name="fillColorPopupButton">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="F&#xfc;llfarbe"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/attribute_fillcolor.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="ch.randelshofer.draw.ui.JPopupButton" name="lineColorPopupButton">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Linienfarbe"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/attribute_linecolor.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="ch.randelshofer.draw.ui.JPopupButton" name="textColorPopupButton">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Schriftfarbe"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/attribute_textcolor.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="ch.randelshofer.draw.ui.JPopupButton" name="lineWidthPopupButton">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Linienst&#xe4;rke"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/attribute_linewidth.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="ch.randelshofer.draw.ui.JPopupButton" name="lineDecorationPopupButton">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Pfeilspitzen"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/attribute_linedecoration.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="ch.randelshofer.draw.ui.JPopupButton" name="lineDashesPopupButton">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Strichart"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/attribute_linedashes.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="ch.randelshofer.draw.ui.JPopupButton" name="fontPopupButton">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Schriftart"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/attribute_font.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="boldToggleButton">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/attribute_fontbold.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Fett"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="italicToggleButton">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/attribute_fontitalic.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Kursiv"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="underlineToggleButton">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ch/randelshofer/draw/images/attribute_fontunderline.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Unterstrichen"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JToolBar" name="actionToolbar1">
+          <Properties>
+            <Property name="floatable" type="boolean" value="false"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="1" gridY="0" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="20" insetsBottom="0" insetsRight="0" anchor="17" weightX="1.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
+        </Container>
+        <Container class="javax.swing.JToolBar" name="actionToolbar2">
+          <Properties>
+            <Property name="floatable" type="boolean" value="false"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+              <GridBagConstraints gridX="1" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="20" insetsBottom="0" insetsRight="0" anchor="17" weightX="1.0" weightY="0.0"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="scrollPane">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="Center"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="ch.randelshofer.draw.framework.DefaultDrawingView" name="drawingView">
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="true"/>
+          </Layout>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

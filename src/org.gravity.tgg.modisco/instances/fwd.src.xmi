@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:java="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java" name="Test">
+  <ownedElements name="foo"/>
+</java:Model>
