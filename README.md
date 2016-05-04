@@ -28,9 +28,10 @@ as well as a remarkable gain in efficiency due to information reuse.
 
 - Eclipse Modeling Tools (tested with Mars.2)
 - Eclipse plug-ins:
-  * Xtext
-  * eMoflon (installation instructions at [http://www.emoflon.org](http://www.emoflon.org))
+  * Xtext (available at the Eclipse Marketplace)
   * MoDisco (available at the Eclipse Marketplace)
+  * eMoflon (installation instructions at [http://www.emoflon.org](http://www.emoflon.org))
+  
 
 ### Installation:
 
