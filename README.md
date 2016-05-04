@@ -22,7 +22,7 @@ This site contains the source code of our tool implementation HULK which compris
 scalability to real-size programs, 
 as well as a remarkable gain in efficiency due to information reuse.
 
-## Installation
+## Installation and Usage
 
 ### Requirements:
 
