@@ -22,15 +22,13 @@ This site contains the source code of our tool implementation HULK which compris
 scalability to real-size programs, 
 as well as a remarkable gain in efficiency due to information reuse.
 
-HULK is a tool prototype to support object-oriented software development by continuously detecting design flaws over the version history. As a result, an annotated model of the program containing design flaw information is created. Moreover, the annotations also appear in the source code, effectively supporting maintenance decisions.
-
 ## Installation
 
 TODO
 
 ## Evaluation
 
-We evaluate HULK on an established corpus of 13 (TODO: check) open-source Java projects selected from related literature on anti-pattern and code smell detection. Sources for the corpus are:
+We evaluated HULK on an established corpus of 13 open-source Java projects selected from related literature on anti-pattern and code smell detection. Sources for the corpus are:
 
 - [Moha et al.: DECOR - A Method for the Specification and Detection of Code and Design Smells. In: Transactions on Software Engineering, vol. 36, 2010.](http://www.irisa.fr/triskell/publis/2009/Moha09d.pdf)
 - [Khomh et al.: BDTEX - A GQM-based Bayesian Approach for the Detection of Antipatterns. In: Journal of Systems and Software, vol. 84, 2011.](http://dl.acm.org/citation.cfm?id=1942375)
@@ -55,4 +53,4 @@ Based on these papers and our own investigations for simple examples, the follow
 - [SvnKit, version 1.8.12](http://svnkit.com/download.php): an open-source Subversion library
 - [Xerces, version 2.7.0](http://archive.apache.org/dist/xml/xerces-j/): an open-source XML parser
 
-All source codes can be found under TODO:separate folder
+All source codes can be found under [test_data](https://github.com/Echtzeitsysteme/hulk-ase-2016/tree/master/test_data). Evaluation results can be found under [evaluation_results](https://github.com/Echtzeitsysteme/hulk-ase-2016/tree/master/evaluation_results).
