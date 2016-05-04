@@ -24,7 +24,26 @@ as well as a remarkable gain in efficiency due to information reuse.
 
 ## Installation
 
-TODO
+### Requirements:
+
+- Eclipse Modeling Tools (tested with Mars.2)
+- Eclipse plug-ins:
+  * Xtext
+  * eMoflon (installation instructions at [http://www.emoflon.org](http://www.emoflon.org))
+  * MoDisco (available at the Eclipse Marketplace)
+
+### Installation:
+
+1. Download the HULK source from [src](https://github.com/Echtzeitsysteme/hulk-ase-2016/tree/master/src)
+2. Import HULK as Eclipse projects
+3. Launch a fresh Eclipse instance from the workspace containing the HULK projects
+4. Import source code of Java projects to be analysed into the freshly opened workspace
+
+### Usage:
+
+1. Right-click on the project folder to be analysed -> Hulk -> Scan...
+2. In the pop-up window, choose anti-patterns and/or code smells to be detected
+3. After detection, results appear in a fresh pop-up window, where all the relecant symptoms and metrics can be explored
 
 ## Evaluation
 
