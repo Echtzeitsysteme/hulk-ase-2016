@@ -1,4 +1,4 @@
-# HULK - Continuous Object-Oriented Design Flaw Detection
+# HULK - Continuous Object-Oriented Design-Flaw Detection
 
 Design flaws in object-oriented programs may seriously corrupt code 
 quality thus increasing the risk for introducing subtle errors 
