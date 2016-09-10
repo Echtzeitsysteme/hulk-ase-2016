@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gravity.hulk/gen" modelPluginID="org.gravity.hulk"
+    modelName="Hulk" updateClasspath="false" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.moflon.core.dfs/model/Dfs.genmodel#//dfs platform:/plugin/org.gravity.hulk.antipatterngraph/model/Antipatterngraph.genmodel#//antipatterngraph platform:/plugin/org.gravity.typegraph.basic/model/Basic.genmodel#//basic"
+    operationReflection="true">
+  <foreignModel>Hulk.ecore</foreignModel>
+  <genPackages prefix="Hulk" basePackage="org.gravity" disposableProviderFactory="true"
+      ecorePackage="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#/">
+    <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection/apg"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection/detectors"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection/programlocation"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection/createAntiPatternDependencies">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection/createAntiPatternDependencies/graph"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection/createCodeSmellDependencies">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection/createCodeSmellDependencies/graph"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection/createMetricDependencies">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection/createMetricDependencies/graph"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection/detect"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HAntiPatternDetection/getDependencyGraph"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HDetector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HDetector/hulk"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HDetector/hAnnotation"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HDetector/detect">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HDetector/detect/apg"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//HDetector/getNextID"/>
+    </genClasses>
+    <nestedGenPackages prefix="Detection" basePackage="org.gravity.hulk" disposableProviderFactory="true"
+        ecorePackage="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection">
+      <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HCodeSmellDetector"/>
+      <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HMetricCalculator"/>
+      <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HAntiPatternDetector"/>
+      <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedCalculator">
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedCalculator/calculate">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedCalculator/calculate/tClass"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedCalculator/detect">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedCalculator/detect/pg"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedMetricCalculator">
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedMetricCalculator/calculate">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedMetricCalculator/calculate/tClass"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedMetricCalculator/calculateMetric">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedMetricCalculator/calculateMetric/tClass"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedMetricCalculator/detect">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedMetricCalculator/detect/pg"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedMetricCalculator/calculateValue">
+          <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/HClassBasedMetricCalculator/calculateValue/tClass"/>
+        </genOperations>
+      </genClasses>
+      <nestedGenPackages prefix="Antipattern" basePackage="org.gravity.hulk.detection"
+          disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern">
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HBlobDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HBlobDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HBlobDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HGodClassDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HGodClassDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HGodClassDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HSwissArmyKnifeDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HSwissArmyKnifeDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HSwissArmyKnifeDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HSpaghettiCodeDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HSpaghettiCodeDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HSpaghettiCodeDetector/calculate/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HSpaghettiCodeDetector/collect">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HSpaghettiCodeDetector/collect/hAnnotation"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HSpaghettiCodeDetector/connect">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/antipattern/HSpaghettiCodeDetector/connect/hAntiPattern"/>
+          </genOperations>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Codesmells" basePackage="org.gravity.hulk.detection"
+          disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells">
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HContollerClassDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HContollerClassDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HContollerClassDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HDataClassDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HDataClassDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HDataClassDetector/calculate/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HDataClassDetector/makeChildDC">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HDataClassDetector/makeChildDC/tChild"/>
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HDataClassDetector/makeChildDC/tSmell"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HEmptyClassDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HEmptyClassDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HEmptyClassDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HGetterSetterDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HGetterSetterDetector/isGetterSetter">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HGetterSetterDetector/isGetterSetter/method"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HGetterSetterDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HGetterSetterDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HLargeClassLowCohesionDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HLargeClassLowCohesionDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HLargeClassLowCohesionDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HLargeClassDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HLargeClassDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HLargeClassDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HLowCohesionDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HLowCohesionDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HLowCohesionDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HDataClassAccessorDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HDataClassAccessorDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HDataClassAccessorDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HManyParametersDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HManyParametersDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HManyParametersDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HMuchOverloadingDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HMuchOverloadingDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HMuchOverloadingDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HIntenseFieldUsageDetector">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HIntenseFieldUsageDetector/calculate">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/codesmells/HIntenseFieldUsageDetector/calculate/tClass"/>
+          </genOperations>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Metrics" basePackage="org.gravity.hulk.detection"
+          disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics">
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HInvocationRelationCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HInvocationRelationCalculator/calculateMetric">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HInvocationRelationCalculator/calculateMetric/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HInvocationRelationCalculator/calculateInvocValue">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HInvocationRelationCalculator/calculateInvocValue/nii"/>
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HInvocationRelationCalculator/calculateInvocValue/noi"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HInvocationRelationCalculator/calculateValue">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HInvocationRelationCalculator/calculateValue/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HNumberOfChildCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HNumberOfChildCalculator/calculateMetric">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HNumberOfChildCalculator/calculateMetric/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HNumberOfChildCalculator/calculateValue">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HNumberOfChildCalculator/calculateValue/tParent"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HMemberNumberCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HMemberNumberCalculator/calculateMetric">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HMemberNumberCalculator/calculateMetric/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HMemberNumberCalculator/calculateValue">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HMemberNumberCalculator/calculateValue/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalAccessRelationCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalAccessRelationCalculator/calculateMetric">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalAccessRelationCalculator/calculateMetric/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalAccessRelationCalculator/calculateValue">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalAccessRelationCalculator/calculateValue/fa"/>
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalAccessRelationCalculator/calculateValue/ma"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalAccessRelationCalculator/calculateValue.1">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalAccessRelationCalculator/calculateValue.1/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HMethodNumberCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HMethodNumberCalculator/calculateMetric">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HMethodNumberCalculator/calculateMetric/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HMethodNumberCalculator/calculateValue">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HMethodNumberCalculator/calculateValue/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HGetterSetterMethodRelationCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HGetterSetterMethodRelationCalculator/calculateMetric">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HGetterSetterMethodRelationCalculator/calculateMetric/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HGetterSetterMethodRelationCalculator/calculateValue">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HGetterSetterMethodRelationCalculator/calculateValue/setter"/>
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HGetterSetterMethodRelationCalculator/calculateValue/getter"/>
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HGetterSetterMethodRelationCalculator/calculateValue/methods"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HGetterSetterMethodRelationCalculator/calculateValue.1">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HGetterSetterMethodRelationCalculator/calculateValue.1/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HAverageParamtersCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HAverageParamtersCalculator/calculateMetric">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HAverageParamtersCalculator/calculateMetric/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HAverageParamtersCalculator/calculateValue">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HAverageParamtersCalculator/calculateValue/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HAverageOverloadingInClassCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HAverageOverloadingInClassCalculator/calculateMetric">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HAverageOverloadingInClassCalculator/calculateMetric/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HAverageOverloadingInClassCalculator/calculateValue">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HAverageOverloadingInClassCalculator/calculateValue/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalMethodAccessCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalMethodAccessCalculator/calculateMetric">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalMethodAccessCalculator/calculateMetric/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalMethodAccessCalculator/calculateValue">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalMethodAccessCalculator/calculateValue/tClass"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalFieldsAccessCalculator">
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalFieldsAccessCalculator/calculateMetric">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalFieldsAccessCalculator/calculateMetric/tClass"/>
+          </genOperations>
+          <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalFieldsAccessCalculator/calculateValue">
+            <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/HLocalFieldsAccessCalculator/calculateValue/tClass"/>
+          </genOperations>
+        </genClasses>
+        <nestedGenPackages prefix="Sourcemeter" basePackage="org.gravity.hulk.detection.metrics"
+            disposableProviderFactory="true" ecorePackage="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter">
+          <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourceMeterMetricTypes">
+            <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourceMeterMetricTypes/LCOM"/>
+            <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourceMeterMetricTypes/NII"/>
+            <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourceMeterMetricTypes/NOI"/>
+            <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourceMeterMetricTypes/NG"/>
+            <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourceMeterMetricTypes/NS"/>
+            <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourceMeterMetricTypes/DIT"/>
+          </genEnums>
+          <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HLCOM5Calculator">
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HLCOM5Calculator/whichMetric"/>
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HLCOM5Calculator/createMetric">
+              <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HLCOM5Calculator/createMetric/value"/>
+            </genOperations>
+          </genClasses>
+          <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSettersCalculator">
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSettersCalculator/whichMetric"/>
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSettersCalculator/createMetric">
+              <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSettersCalculator/createMetric/value"/>
+            </genOperations>
+          </genClasses>
+          <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HIncommingInvocationsCalculator">
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HIncommingInvocationsCalculator/whichMetric"/>
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HIncommingInvocationsCalculator/createMetric">
+              <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HIncommingInvocationsCalculator/createMetric/value"/>
+            </genOperations>
+          </genClasses>
+          <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourcemeterMetricCalculator">
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourcemeterMetricCalculator/calculateMetric">
+              <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourcemeterMetricCalculator/calculateMetric/tClass"/>
+            </genOperations>
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourcemeterMetricCalculator/whichMetric"/>
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourcemeterMetricCalculator/createMetric">
+              <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourcemeterMetricCalculator/createMetric/value"/>
+            </genOperations>
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourcemeterMetricCalculator/calculateValue">
+              <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSourcemeterMetricCalculator/calculateValue/tClass"/>
+            </genOperations>
+          </genClasses>
+          <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSoureMeterMetricType">
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HSoureMeterMetricType/type"/>
+          </genClasses>
+          <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HOutgoingInvocationsCalculator">
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HOutgoingInvocationsCalculator/whichMetric"/>
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HOutgoingInvocationsCalculator/createMetric">
+              <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HOutgoingInvocationsCalculator/createMetric/value"/>
+            </genOperations>
+          </genClasses>
+          <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HGettersCalculator">
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HGettersCalculator/whichMetric"/>
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HGettersCalculator/createMetric">
+              <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HGettersCalculator/createMetric/value"/>
+            </genOperations>
+          </genClasses>
+          <genClasses ecoreClass="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HDepthOfInheritanceCalculator">
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HDepthOfInheritanceCalculator/createMetric">
+              <genParameters ecoreParameter="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HDepthOfInheritanceCalculator/createMetric/value"/>
+            </genOperations>
+            <genOperations ecoreOperation="platform:/plugin/org.gravity.hulk/model/Hulk.ecore#//detection/metrics/sourcemeter/HDepthOfInheritanceCalculator/whichMetric"/>
+          </genClasses>
+        </nestedGenPackages>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

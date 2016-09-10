@@ -1,0 +1,31 @@
+<MocaTree:Node xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:MocaTree="platform:/plugin/MocaTree/model/MocaTree.ecore">
+  <children name="changesTree" index="0" xsi:type="MocaTree:Node">
+    <children name="EPackage" index="0" xsi:type="MocaTree:Node">
+      <children name="classes" index="0" xsi:type="MocaTree:Node">
+        <children name="EClass" index="0" xsi:type="MocaTree:Node">
+          <attribute name="name" value="TAnnotation" index="0" />
+          <attribute name="previousName" value="TAnnotation" index="1" />
+          <attribute name="packageName" value="org.gravity.typegraph.basic" index="2" />
+          <attribute name="baseClasses" value="{6B0FE78E-919E-4d99-BB4E-56B912BDC7BC} " index="3" />
+        </children>
+        <children name="EClass" index="1" xsi:type="MocaTree:Node">
+          <attribute name="name" value="TAnnotationType" index="0" />
+          <attribute name="previousName" value="TAnnotationType" index="1" />
+          <attribute name="packageName" value="org.gravity.typegraph.basic" index="2" />
+          <attribute name="baseClasses" value="{A0406E15-199C-41cf-A108-C511EC0090E5} " index="3" />
+        </children>
+      </children>
+      <children name="packages" index="1" xsi:type="MocaTree:Node" />
+      <attribute name="guid" value="{13C86080-5C83-4d30-8B25-3E3F1B53492C}" index="0" />
+      <attribute name="Moflon::Name" value="org.gravity.typegraph.basic" index="1" />
+      <attribute name="Moflon::NsPrefix" value="org.gravity.typegraph.basic" index="2" />
+      <attribute name="Moflon::NsUri" value="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore" index="3" />
+      <attribute name="Moflon::PluginID" value="org.gravity.typegraph.basic" index="4" />
+      <attribute name="Moflon::Export" value="true" index="5" />
+      <attribute name="Moflon::Validated" value="false" index="6" />
+      <attribute name="Moflon::WorkingSet" value="GRaViTY" index="7" />
+      <attribute name="Changes::IsTLP" value="true" index="8" />
+      <attribute name="Moflon::Changes" value="true" index="9" />
+    </children>
+  </children>
+</MocaTree:Node>

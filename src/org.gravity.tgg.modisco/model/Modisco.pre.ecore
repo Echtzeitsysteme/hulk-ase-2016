@@ -1,0 +1,1461 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activities="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//activities" xmlns:callExpressions="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//calls/callExpressions" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expressions="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//expressions" xmlns:patternExpressions="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//patterns/patternExpressions" name="modisco" nsURI="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore" nsPrefix="org.gravity.tgg.modisco">
+  <eClassifiers xsi:type="ecore:EClass" name="CompilationUnitToTInterface">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TInterface"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionToTFieldDefinition">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Expression"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MFieldDefinitionToTFieldDefinition">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MConstructorDefinitionToTParameterList">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MConstructorDefinition"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameterList"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompilationUnitToTClass">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompilationUnitToTypeGraph">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompilationUnitToTPackage">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageToTPackage">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TPackage"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelToTypeGraph">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TypeGraph"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldDeclarationToTField">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//FieldDeclaration"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDeclarationFragmentToTFieldDefinition">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldDefinition"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodDeclarationToTMethodSignature">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementToTMethodDefinition">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Statement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractMethodInvocationToTAccess">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAccess"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeAccessToTFieldSignature">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDefinitionToTMember">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MDefinition"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldAccessToTAccess">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//FieldAccess"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAccess"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeToTClass">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//PrimitiveType"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnonymousClassDeclarationToTClass">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MMethodNameToTMethod">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MMethodSignatureToTMethodSignature">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MMethodSignatureToTParameterList">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameterList"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MEntryToTParameter">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MEntry"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BlockToTMethodDefinition">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Block"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodDeclarationToTMethod">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodDeclarationToTMethodDefinition">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleVariableDeclarationToTParameter">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TParameter"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MSignatureToTSignature">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MSignature"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSignature"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MFieldSignatureToTFieldSignature">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BodyDeclarationToTAnnotatable">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAnnotatable"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldDeclarationToTFieldSignature">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//FieldDeclaration"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TFieldSignature"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeToTAbstractType">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAbstractType"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MFieldNameToTField">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldName"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TField"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementToTMember">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMember"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Statement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MSignatureToTMethodSignature">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MSignature"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDefinitionToTSignature">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TSignature"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MDefinition"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleVariableAccessToTAccess">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAccess"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableAccess"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorDeclarationToTMethodDefinition">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodDefinition"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationToTAnnotation">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Annotation"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TAnnotation"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorDeclarationToTMethod">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethod"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorDeclarationToTMethodSignature">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ConstructorDeclaration"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TMethodSignature"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeParameterToTClass">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeParameter"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnresolvedTypeDeclarationToTClass">
+    <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractCorrespondence"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//UnresolvedTypeDeclaration"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.typegraph.basic/model/Basic.ecore#//TClass"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eSubpackages name="Rules" nsURI="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore#//Rules" nsPrefix="Rules">
+    <eClassifiers xsi:type="ecore:EClass" name="CompilationUnit">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModelToPg">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PackageToPGPackage">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SubPackageToPGPackage">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Types" abstract="true">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NestedInterfaceInType">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterizedTypeToClass">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NestedClassInType">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SignatureReturnType">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Interface">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldSignature">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractMethodInvocationSource" abstract="true">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypesToClass" abstract="true">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodParameterType">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NestedTypes" abstract="true">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AnnotationType">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldAccessSource">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InterfaceExtendsInterface">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ClassExtendsClass">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ClassImplementsInterface">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ClassInnerMethode">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ClassInnerConstructor">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodInvocationTarget">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldName">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldDefinition">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LinkDefinitionToClass">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Class">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldType">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NestedAnnotationType">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AnnotationTypeWithValue">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsInt">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AnonymousClass">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodParameterLinkFirst">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodSignature">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ArrayTypeToClass">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsBoolean">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsChar">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsByte">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsShort">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsLong">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsFloat">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypeIsDouble">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodDefinition">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Annotatio">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NestedEnum">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveTypesIsVoid">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ReturnType">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodParameterLink">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodName">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LinkSignatureToType">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodParameter">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldAccessTarget">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Enum">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MethodInvocationSource">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SuperMethodInvocationSource">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConstructorInvocationSource">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SuperConstructorInvocationSource">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeParameter">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Constructor">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UnresolvedTypeDeclaration">
+      <eSuperTypes href="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="preprocessing" nsURI="platform:/plugin/org.gravity.tgg.modisco/model/Modisco.ecore#//preprocessing" nsPrefix="preprocessing">
+    <eClassifiers xsi:type="ecore:EClass" name="MoDiscoTGGPreprocessing">
+      <eOperations xsi:type="activities:MoflonEOperation" name="createParamList">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="mDef">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+        </eParameters>
+        <eParameters name="mSig">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature"/>
+        </eParameters>
+      </eOperations>
+      <eOperations xsi:type="activities:MoflonEOperation" name="fixStaticMethodCallOnField">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="model">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+        </eParameters>
+        <activity owningOperation="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField">
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.2" guard="END"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.1" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0" guard="SUCCESS"/>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode28" comment="ActivityNode28" outgoing="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityEdge.0 //preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityEdge.1" incoming="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityEdge.2 //preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityEdge.3 //preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityEdge.4" forEach="true">
+            <storyPattern comment="ActivityNode28">
+              <objectVariable name="type" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+              </objectVariable>
+              <objectVariable name="block" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.6" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.1">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Block"/>
+              </objectVariable>
+              <objectVariable name="access" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.7 //preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.8">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableAccess"/>
+              </objectVariable>
+              <objectVariable name="cu" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.3" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.2">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit"/>
+              </objectVariable>
+              <objectVariable name="model" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.3" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <objectVariable name="expression" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.1" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.4">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ExpressionStatement"/>
+              </objectVariable>
+              <objectVariable name="method" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.5 //preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.6">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
+              </objectVariable>
+              <objectVariable name="invoc" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.4 //preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.10" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.7">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodInvocation"/>
+              </objectVariable>
+              <objectVariable name="clazz" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.2 //preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.5">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+              </objectVariable>
+              <objectVariable name="var" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.9" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.8">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
+              </objectVariable>
+              <objectVariable name="varDecl" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.9">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//FieldDeclaration"/>
+              </objectVariable>
+              <objectVariable name="called" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.0" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@linkVariable.10">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
+              </objectVariable>
+              <linkVariable name="bodyDeclarations" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.11" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.0"/>
+              <linkVariable name="statements" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.5" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.1"/>
+              <linkVariable name="types" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.8" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.3"/>
+              <linkVariable name="compilationUnits" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.3" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.4"/>
+              <linkVariable name="expression" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.7" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.5"/>
+              <linkVariable name="abstractTypeDeclaration" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.8" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.6"/>
+              <linkVariable name="body" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.6"/>
+              <linkVariable name="expression" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.7"/>
+              <linkVariable name="usageInVariableAccess" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.9"/>
+              <linkVariable name="fragments" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.9" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.10"/>
+              <linkVariable name="usages" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.7" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.11"/>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityEdge.2"/>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityEdge.0">
+            <returnValue xsi:type="expressions:LiteralExpression" value="true"/>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode29" comment="ActivityNode29" outgoing="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityEdge.3 //preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityEdge.4" incoming="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityEdge.1">
+            <storyPattern comment="ActivityNode29">
+              <objectVariable name="type" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+              </objectVariable>
+              <objectVariable name="old" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.2" bindingSemantics="NEGATIVE">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+              </objectVariable>
+              <objectVariable name="create" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0 //preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1" bindingOperator="CREATE">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+              </objectVariable>
+              <objectVariable name="varDecl" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1 //preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.2" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//FieldDeclaration"/>
+              </objectVariable>
+              <linkVariable name="usagesInTypeAccess" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
+              <linkVariable name="type" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.3" bindingOperator="CREATE"/>
+              <linkVariable name="type" target="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/fixStaticMethodCallOnField/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.3"/>
+            </storyPattern>
+          </ownedActivityNode>
+        </activity>
+      </eOperations>
+      <eOperations xsi:type="activities:MoflonEOperation" name="getMostGenericReturnType">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+        <eParameters name="method">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+        </eParameters>
+      </eOperations>
+      <eOperations xsi:type="activities:MoflonEOperation" name="isParamListEqual">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="mDef">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+        </eParameters>
+        <eParameters name="mSig">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature"/>
+        </eParameters>
+      </eOperations>
+      <eOperations xsi:type="activities:MoflonEOperation" name="isSuperType">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="type">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+        </eParameters>
+        <eParameters name="supertype">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+        </eParameters>
+      </eOperations>
+      <eOperations xsi:type="activities:MoflonEOperation" name="preprocess">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="model">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+        </eParameters>
+        <activity owningOperation="//preprocessing/MoDiscoTGGPreprocessing/preprocess">
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.0" target="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.3" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.0" target="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.1" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.4" target="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.8" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.4" target="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.2" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.5" target="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.4"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.7" target="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.5"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.8" target="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.6" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.8" target="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.0" guard="SUCCESS"/>
+          <ownedActivityNode xsi:type="activities:StatementNode" name="ActivityNode39" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.0 //preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.1" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.7">
+            <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//preprocessing/MoDiscoTGGPreprocessing/preprocessAccesses">
+              <ownedParameterBindings parameter="//preprocessing/MoDiscoTGGPreprocessing/preprocessAccesses/model">
+                <valueExpression xsi:type="callExpressions:ParameterExpression" parameter="//preprocessing/MoDiscoTGGPreprocessing/preprocess/model"/>
+              </ownedParameterBindings>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.5/@storyPattern/@objectVariable.0"/>
+            </statementExpression>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.1">
+            <returnValue xsi:type="expressions:LiteralExpression" value="false"/>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.3">
+            <returnValue xsi:type="expressions:LiteralExpression" value="false"/>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.0">
+            <returnValue xsi:type="expressions:LiteralExpression" value="true"/>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StatementNode" name="ActivityNode2" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.2 //preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.3" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.4">
+            <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields">
+              <ownedParameterBindings parameter="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/model">
+                <valueExpression xsi:type="callExpressions:ParameterExpression" parameter="//preprocessing/MoDiscoTGGPreprocessing/preprocess/model"/>
+              </ownedParameterBindings>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.5/@storyPattern/@objectVariable.0"/>
+            </statementExpression>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode1" comment="ActivityNode1" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.4" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.5">
+            <storyPattern comment="ActivityNode1">
+              <objectVariable type="//preprocessing/MoDiscoTGGPreprocessing" name="this" bindingState="BOUND"/>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.6">
+            <returnValue xsi:type="expressions:LiteralExpression" value="false"/>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.5"/>
+          <ownedActivityNode xsi:type="activities:StatementNode" name="ActivityNode3" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.6 //preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.7" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityEdge.2">
+            <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods">
+              <ownedParameterBindings parameter="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/model">
+                <valueExpression xsi:type="callExpressions:ParameterExpression" parameter="//preprocessing/MoDiscoTGGPreprocessing/preprocess/model"/>
+              </ownedParameterBindings>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocess/@activity/@ownedActivityNode.5/@storyPattern/@objectVariable.0"/>
+            </statementExpression>
+          </ownedActivityNode>
+        </activity>
+      </eOperations>
+      <eOperations xsi:type="activities:MoflonEOperation" name="preprocessFields">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="model">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+        </eParameters>
+        <activity owningOperation="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields">
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.0" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.10"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8" guard="END"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.7" guard="END"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.9" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.0"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.10" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.18" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.10" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1" guard="END"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.11" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.13" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.11" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.15" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.13" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.13" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.10" guard="END"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.11" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.18" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17"/>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode4" comment="ActivityNode4" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.0" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.13">
+            <storyPattern comment="ActivityNode4">
+              <objectVariable type="//preprocessing/MoDiscoTGGPreprocessing" name="this" bindingState="BOUND"/>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode5" comment="ActivityNode5" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.2" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.9 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.10 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.15" forEach="true">
+            <storyPattern comment="ActivityNode5">
+              <objectVariable name="declFragment" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
+              </objectVariable>
+              <objectVariable name="model" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <objectVariable name="mfDefinition" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <linkVariable name="variablesContainer" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0"/>
+              <linkVariable name="mFieldDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mFieldDefinitions"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode11" comment="ActivityNode11" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.3" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.7">
+            <storyPattern comment="ActivityNode11">
+              <objectVariable name="mSig" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.4 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.2 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.3" bindingOperator="CREATE">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature"/>
+              </objectVariable>
+              <objectVariable name="mfDefinition2" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.3" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="mName" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.2" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.4" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldName"/>
+              </objectVariable>
+              <objectVariable name="model" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <linkVariable name="mDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MSignature/mDefinitions"/>
+              </linkVariable>
+              <linkVariable name="mFieldSignatures" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mFieldSignatures"/>
+              </linkVariable>
+              <linkVariable name="mFieldName" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature/mFieldName"/>
+              </linkVariable>
+              <linkVariable name="mFieldDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature/mFieldDefinitions"/>
+              </linkVariable>
+              <linkVariable name="mSignatures" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MName/mSignatures"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode30" comment="ActivityNode30" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.4 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.5" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.3">
+            <storyPattern comment="ActivityNode30">
+              <objectVariable name="mSig" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.2" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature"/>
+              </objectVariable>
+              <objectVariable name="mAccess" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.3 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.4">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+              </objectVariable>
+              <objectVariable name="mfDefinition2" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.2" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.3" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="mType" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.4">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+              </objectVariable>
+              <linkVariable name="type" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.3" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature/type"/>
+              </linkVariable>
+              <linkVariable name="mDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MSignature/mDefinitions"/>
+              </linkVariable>
+              <linkVariable name="mFieldDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature/mFieldDefinitions"/>
+              </linkVariable>
+              <linkVariable name="type" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.2"/>
+              <linkVariable name="usagesInTypeAccess" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.3"/>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode10" comment="ActivityNode10" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.6 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.7" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.12">
+            <storyPattern comment="ActivityNode10">
+              <objectVariable name="mType" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.0 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.3">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+              </objectVariable>
+              <objectVariable name="mName" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldName"/>
+              </objectVariable>
+              <objectVariable name="mAccess" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.4" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+              </objectVariable>
+              <objectVariable name="mSig" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.2 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.3 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.5">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature"/>
+              </objectVariable>
+              <objectVariable name="mfDefinition2" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.2 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.5" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.4" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <linkVariable name="type" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.2"/>
+              <linkVariable name="mFieldName" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.3">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature/mFieldName"/>
+              </linkVariable>
+              <linkVariable name="mDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.4" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MSignature/mDefinitions"/>
+              </linkVariable>
+              <linkVariable name="type" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.3">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature/type"/>
+              </linkVariable>
+              <linkVariable name="type" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.4"/>
+              <linkVariable name="mFieldDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.4" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldSignature/mFieldDefinitions"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode7" comment="ActivityNode7" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.8 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.9" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.1">
+            <storyPattern comment="ActivityNode7">
+              <objectVariable name="mName" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5/@storyPattern/@linkVariable.0" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5/@storyPattern/@linkVariable.1">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldName"/>
+                <constraint>
+                  <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                    <rightExpression xsi:type="patternExpressions:AttributeValueExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0">
+                      <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                    </rightExpression>
+                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5/@storyPattern/@objectVariable.0">
+                      <attribute href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MName/mName"/>
+                    </leftExpression>
+                  </constraintExpression>
+                </constraint>
+              </objectVariable>
+              <objectVariable name="model" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <objectVariable name="mfDefinition" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <linkVariable name="mFieldNames" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5/@storyPattern/@objectVariable.1">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mFieldNames"/>
+              </linkVariable>
+              <linkVariable name="mFieldDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.5/@storyPattern/@objectVariable.0" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldName/mFieldDefinitions"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode9" comment="ActivityNode9" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.10" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.8">
+            <storyPattern comment="ActivityNode9">
+              <objectVariable name="mfDefinition" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="model" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <objectVariable name="mName" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.2" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingOperator="CREATE">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldName"/>
+                <attributeAssignment>
+                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </valueExpression>
+                  <attribute href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MName/mName"/>
+                </attributeAssignment>
+              </objectVariable>
+              <linkVariable name="mFieldDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldName/mFieldDefinitions"/>
+              </linkVariable>
+              <linkVariable name="mNames" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mNames"/>
+              </linkVariable>
+              <linkVariable name="mFieldNames" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mFieldNames"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.11">
+            <returnValue xsi:type="expressions:LiteralExpression" value="true"/>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode6" comment="ActivityNode6" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.11 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.12" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.2 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.4 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.5 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.6" forEach="true">
+            <storyPattern comment="ActivityNode6">
+              <objectVariable name="mfDefinition2" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="mName" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8/@storyPattern/@linkVariable.1" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldName"/>
+              </objectVariable>
+              <objectVariable name="model" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <linkVariable name="mFieldDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8/@storyPattern/@objectVariable.1">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldName/mFieldDefinitions"/>
+              </linkVariable>
+              <linkVariable name="mFieldNames" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.8/@storyPattern/@objectVariable.2">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mFieldNames"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.13"/>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode31" comment="ActivityNode31" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.14 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.15" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.0 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.26" forEach="true">
+            <storyPattern comment="ActivityNode31">
+              <objectVariable name="model" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.10/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <objectVariable name="mDefinition" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.10/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <linkVariable name="mFieldDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.10/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.10/@storyPattern/@objectVariable.0">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mFieldDefinitions"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode32" comment="ActivityNode32" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.16 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.17" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.27">
+            <storyPattern comment="ActivityNode32">
+              <objectVariable name="scndDeclFragment" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.11/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
+              </objectVariable>
+              <objectVariable name="newDef" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.11/@storyPattern/@linkVariable.1" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.11/@storyPattern/@linkVariable.0" bindingOperator="CREATE">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+                <attributeAssignment>
+                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.1">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </valueExpression>
+                  <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                </attributeAssignment>
+                <attributeAssignment>
+                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.1">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/proxy"/>
+                  </valueExpression>
+                  <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/proxy"/>
+                </attributeAssignment>
+              </objectVariable>
+              <objectVariable name="model" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.11/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <linkVariable name="fragments" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.11/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.11/@storyPattern/@objectVariable.1" bindingOperator="CREATE"/>
+              <linkVariable name="mFieldDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.11/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.11/@storyPattern/@objectVariable.2" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mFieldDefinitions"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode33" comment="ActivityNode33" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.18 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.19" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.20 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.21">
+            <storyPattern comment="ActivityNode33">
+              <objectVariable name="newDef" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="newTypeAccess" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.0" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.1" bindingOperator="CREATE">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+              </objectVariable>
+              <objectVariable name="type" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.3">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+              </objectVariable>
+              <objectVariable name="mDefinition" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.2" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="oldTypeAccess" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.2" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@linkVariable.3">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+              </objectVariable>
+              <linkVariable name="type" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.0" bindingOperator="CREATE"/>
+              <linkVariable name="type" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.1" bindingOperator="CREATE"/>
+              <linkVariable name="type" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.4" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.3"/>
+              <linkVariable name="type" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.12/@storyPattern/@objectVariable.4"/>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode38" comment="ActivityNode38" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.20 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.21" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.16">
+            <storyPattern comment="ActivityNode38">
+              <objectVariable name="abstrType" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.13/@storyPattern/@linkVariable.0 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.13/@storyPattern/@linkVariable.1">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractTypeDeclaration"/>
+              </objectVariable>
+              <objectVariable name="mDefinition" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.13/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="newDef" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.13/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <linkVariable name="abstractTypeDeclaration" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.13/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.13/@storyPattern/@objectVariable.1"/>
+              <linkVariable name="abstractTypeDeclaration" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.13/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.13/@storyPattern/@objectVariable.2" bindingOperator="CREATE"/>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode34" comment="ActivityNode34" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.22 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.23" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.18 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.19">
+            <storyPattern comment="ActivityNode34">
+              <objectVariable name="mDefinition" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="newDef" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="modifier" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14/@storyPattern/@linkVariable.1">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier"/>
+              </objectVariable>
+              <objectVariable name="clonedModifier" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14/@storyPattern/@linkVariable.0" bindingOperator="CREATE">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier"/>
+                <attributeAssignment>
+                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14/@storyPattern/@objectVariable.2">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/visibility"/>
+                  </valueExpression>
+                  <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/visibility"/>
+                </attributeAssignment>
+                <attributeAssignment>
+                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14/@storyPattern/@objectVariable.2">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/inheritance"/>
+                  </valueExpression>
+                  <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Modifier/inheritance"/>
+                </attributeAssignment>
+              </objectVariable>
+              <linkVariable name="modifier" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14/@storyPattern/@objectVariable.3" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14/@storyPattern/@objectVariable.1" bindingOperator="CREATE"/>
+              <linkVariable name="bodyDeclaration" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.14/@storyPattern/@objectVariable.2"/>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.17">
+            <returnValue xsi:type="expressions:LiteralExpression" value="false"/>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode35" comment="ActivityNode35" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.24 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.25" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.22 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.23">
+            <storyPattern comment="ActivityNode35">
+              <objectVariable name="mDefinition" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="newDef" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="anno" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.0" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16/@storyPattern/@linkVariable.1">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AnonymousClassDeclaration"/>
+              </objectVariable>
+              <linkVariable name="anonymousClassDeclarationOwner" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.0"/>
+              <linkVariable name="bodyDeclarations" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.16/@storyPattern/@objectVariable.2" bindingOperator="CREATE"/>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode36" comment="ActivityNode36" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.26 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.27" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.24 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.25 //preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.28" forEach="true">
+            <storyPattern comment="ActivityNode36">
+              <objectVariable name="scndDeclFragment" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
+              </objectVariable>
+              <objectVariable name="mDefinition" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17/@storyPattern/@linkVariable.0" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <objectVariable name="fstDeclFragment" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
+              </objectVariable>
+              <linkVariable name="variablesContainer" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.0" bindingOperator="DESTROY"/>
+              <linkVariable name="fragments" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.17/@storyPattern/@objectVariable.1"/>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode37" comment="ActivityNode37" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.28" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityEdge.14">
+            <storyPattern comment="ActivityNode37">
+              <objectVariable name="fstDeclFragment" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.18/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclarationFragment"/>
+              </objectVariable>
+              <objectVariable name="mDefinition" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.18/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MFieldDefinition"/>
+              </objectVariable>
+              <linkVariable name="variablesContainer" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.18/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessFields/@activity/@ownedActivityNode.18/@storyPattern/@objectVariable.0"/>
+            </storyPattern>
+          </ownedActivityNode>
+        </activity>
+      </eOperations>
+      <eOperations xsi:type="activities:MoflonEOperation" name="preprocessInv">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="model">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+        </eParameters>
+        <activity owningOperation="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv">
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.0" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.1"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.1" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.4" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.5" guard="END"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.4" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.4" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.2" guard="FAILURE"/>
+          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.0"/>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode25" comment="ActivityNode25" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.1" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.0">
+            <storyPattern comment="ActivityNode25">
+              <objectVariable type="//preprocessing/MoDiscoTGGPreprocessing" name="this" bindingState="BOUND"/>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.5">
+            <returnValue xsi:type="expressions:LiteralExpression" value="false"/>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode26" comment="ActivityNode26" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.2 //preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.3" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.4" forEach="true">
+            <storyPattern comment="ActivityNode26">
+              <objectVariable name="mDef" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.2">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MDefinition"/>
+              </objectVariable>
+              <objectVariable name="mName" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MName"/>
+              </objectVariable>
+              <objectVariable name="model" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <objectVariable name="mSig" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.2">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MSignature"/>
+              </objectVariable>
+              <linkVariable name="mSignatures" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.3" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MName/mSignatures"/>
+              </linkVariable>
+              <linkVariable name="mNames" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.2">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mNames"/>
+              </linkVariable>
+              <linkVariable name="mDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.3">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MSignature/mDefinitions"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StatementNode" name="ActivityNode27" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.4 //preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.5" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.2">
+            <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//preprocessing/MoDiscoTGGPreprocessing/updateName">
+              <ownedParameterBindings parameter="//preprocessing/MoDiscoTGGPreprocessing/updateName/mName">
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1"/>
+              </ownedParameterBindings>
+              <ownedParameterBindings parameter="//preprocessing/MoDiscoTGGPreprocessing/updateName/mDef">
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0"/>
+              </ownedParameterBindings>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0"/>
+            </statementExpression>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessInv/@activity/@ownedActivityEdge.3">
+            <returnValue xsi:type="expressions:LiteralExpression" value="true"/>
+          </ownedActivityNode>
+        </activity>
+      </eOperations>
+      <eOperations xsi:type="activities:MoflonEOperation" name="preprocessMethods">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="model">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+        </eParameters>
+        <activity owningOperation="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods">
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.0" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.2"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.2"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.2" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11" guard="END"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.2" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.2" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.4" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.4" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.6" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.0"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.13" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.8" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.9" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10" guard="FAILURE"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.9" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.8" guard="SUCCESS"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.9" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.4" guard="END"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.12" guard="EACH_TIME"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.5" guard="END"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.12" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10"/>
+          <ownedActivityEdge source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.13" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11"/>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode12" comment="ActivityNode12" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.0" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.8">
+            <storyPattern comment="ActivityNode12">
+              <objectVariable type="//preprocessing/MoDiscoTGGPreprocessing" name="this" bindingState="BOUND"/>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode16" comment="ActivityNode16" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.1" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.5">
+            <storyPattern comment="ActivityNode16">
+              <objectVariable name="mName" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.2" bindingOperator="CREATE">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName"/>
+                <attributeAssignment>
+                  <valueExpression xsi:type="patternExpressions:AttributeValueExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </valueExpression>
+                  <attribute href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MName/mName"/>
+                </attributeAssignment>
+              </objectVariable>
+              <objectVariable name="model" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <objectVariable name="mDef" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.2" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+              </objectVariable>
+              <linkVariable name="model" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName/model"/>
+              </linkVariable>
+              <linkVariable name="mNames" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel/mNames"/>
+              </linkVariable>
+              <linkVariable name="mMethodDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName/mMethodDefinitions"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode13" comment="ActivityNode13" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.2 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.3" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.0 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.4" forEach="true">
+            <storyPattern comment="ActivityNode13">
+              <objectVariable name="model" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <objectVariable name="mDef" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+              </objectVariable>
+              <linkVariable name="model" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition/model"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode15" comment="ActivityNode15" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.4 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.5" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.3">
+            <storyPattern comment="ActivityNode15">
+              <objectVariable name="mDef" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+              </objectVariable>
+              <objectVariable name="mName" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName"/>
+                <constraint>
+                  <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                    <rightExpression xsi:type="patternExpressions:AttributeValueExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1">
+                      <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                    </rightExpression>
+                    <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1">
+                      <attribute href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MName/mName"/>
+                    </leftExpression>
+                  </constraintExpression>
+                </constraint>
+              </objectVariable>
+              <objectVariable name="model" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <linkVariable name="mMethodDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName/mMethodDefinitions"/>
+              </linkVariable>
+              <linkVariable name="model" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName/model"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode24" comment="ActivityNode24" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.6 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.7" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.15">
+            <storyPattern comment="ActivityNode24">
+              <objectVariable name="mOldSig" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.0">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature"/>
+              </objectVariable>
+              <objectVariable name="mDef" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+              </objectVariable>
+              <linkVariable name="mMethodDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.0">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature/mMethodDefinitions"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StopNode" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.17">
+            <returnValue xsi:type="expressions:LiteralExpression" value="true"/>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StartNode" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.8"/>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode18" comment="ActivityNode18" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.9 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.10" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.7">
+            <storyPattern comment="ActivityNode18">
+              <objectVariable name="mName" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.1" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName"/>
+              </objectVariable>
+              <objectVariable name="mDef" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.5 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.2" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+              </objectVariable>
+              <objectVariable name="mSigType" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.4" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+              </objectVariable>
+              <objectVariable name="mNewSig" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.0" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.3 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.4 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.5 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.2" bindingOperator="CREATE">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature"/>
+              </objectVariable>
+              <objectVariable name="model" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.3" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <linkVariable name="mSignatures" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.3" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.0" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MName/mSignatures"/>
+              </linkVariable>
+              <linkVariable name="mMethodName" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature/mMethodName"/>
+              </linkVariable>
+              <linkVariable name="mMethodDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature/mMethodDefinitions"/>
+              </linkVariable>
+              <linkVariable name="model" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.4" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature/model"/>
+              </linkVariable>
+              <linkVariable name="returnType" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature/returnType"/>
+              </linkVariable>
+              <linkVariable name="mDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MSignature/mDefinitions"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode20" comment="ActivityNode20" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.11" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.13">
+            <storyPattern comment="ActivityNode20">
+              <objectVariable name="mDef" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.8/@storyPattern/@linkVariable.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.8/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+              </objectVariable>
+              <objectVariable name="mSig" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.8/@storyPattern/@linkVariable.1 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.8/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature"/>
+              </objectVariable>
+              <linkVariable name="mMethodDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.8/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.8/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature/mMethodDefinitions"/>
+              </linkVariable>
+              <linkVariable name="mDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.8/@storyPattern/@objectVariable.0" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.8/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MSignature/mDefinitions"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StatementNode" name="ActivityNode19" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.12 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.13" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.14">
+            <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//preprocessing/MoDiscoTGGPreprocessing/isParamListEqual">
+              <ownedParameterBindings parameter="//preprocessing/MoDiscoTGGPreprocessing/isParamListEqual/mDef">
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2"/>
+              </ownedParameterBindings>
+              <ownedParameterBindings parameter="//preprocessing/MoDiscoTGGPreprocessing/isParamListEqual/mSig">
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10/@storyPattern/@objectVariable.0"/>
+              </ownedParameterBindings>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.0"/>
+            </statementExpression>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode17" comment="ActivityNode17" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.14 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.15" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.11 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.12 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.18" forEach="true">
+            <storyPattern comment="ActivityNode17">
+              <objectVariable name="mSig" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10/@storyPattern/@linkVariable.0 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10/@storyPattern/@linkVariable.1">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature"/>
+              </objectVariable>
+              <objectVariable name="mSigType" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10/@storyPattern/@linkVariable.1" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+              </objectVariable>
+              <objectVariable name="mName" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName"/>
+              </objectVariable>
+              <linkVariable name="mMethodName" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10/@storyPattern/@objectVariable.0">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature/mMethodName"/>
+              </linkVariable>
+              <linkVariable name="returnType" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.10/@storyPattern/@objectVariable.0">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodSignature/returnType"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode14" comment="ActivityNode14" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.16 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.17" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.2 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.6 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.9 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.19" forEach="true">
+            <storyPattern comment="ActivityNode14">
+              <objectVariable name="mName" outgoingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11/@storyPattern/@linkVariable.0 //preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11/@storyPattern/@linkVariable.1">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName"/>
+              </objectVariable>
+              <objectVariable name="mDef" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11/@storyPattern/@linkVariable.1">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+              </objectVariable>
+              <objectVariable name="model" incomingLink="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11/@storyPattern/@linkVariable.0" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+              </objectVariable>
+              <linkVariable name="model" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11/@storyPattern/@objectVariable.2" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11/@storyPattern/@objectVariable.0">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName/model"/>
+              </linkVariable>
+              <linkVariable name="mMethodDefinitions" target="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11/@storyPattern/@objectVariable.1" source="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.11/@storyPattern/@objectVariable.0">
+                <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodName/mMethodDefinitions"/>
+              </linkVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode23" comment="ActivityNode23" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.18" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.16">
+            <storyPattern comment="ActivityNode23">
+              <objectVariable name="mSigType" bindingState="BOUND">
+                <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Type"/>
+                <bindingExpression xsi:type="callExpressions:MethodCallExpression" callee="//preprocessing/MoDiscoTGGPreprocessing/getMostGenericReturnType">
+                  <ownedParameterBindings parameter="//preprocessing/MoDiscoTGGPreprocessing/getMostGenericReturnType/method">
+                    <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2"/>
+                  </ownedParameterBindings>
+                  <target xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.0"/>
+                </bindingExpression>
+              </objectVariable>
+            </storyPattern>
+          </ownedActivityNode>
+          <ownedActivityNode xsi:type="activities:StatementNode" name="ActivityNode21" outgoing="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.19" incoming="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityEdge.10">
+            <statementExpression xsi:type="callExpressions:MethodCallExpression" callee="//preprocessing/MoDiscoTGGPreprocessing/createParamList">
+              <ownedParameterBindings parameter="//preprocessing/MoDiscoTGGPreprocessing/createParamList/mDef">
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2"/>
+              </ownedParameterBindings>
+              <ownedParameterBindings parameter="//preprocessing/MoDiscoTGGPreprocessing/createParamList/mSig">
+                <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.3"/>
+              </ownedParameterBindings>
+              <target xsi:type="patternExpressions:ObjectVariableExpression" object="//preprocessing/MoDiscoTGGPreprocessing/preprocessMethods/@activity/@ownedActivityNode.0/@storyPattern/@objectVariable.0"/>
+            </statementExpression>
+          </ownedActivityNode>
+        </activity>
+      </eOperations>
+      <eOperations xsi:type="activities:MoflonEOperation" name="updateName">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="mName">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MName"/>
+        </eParameters>
+        <eParameters name="mDef">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MDefinition"/>
+        </eParameters>
+      </eOperations>
+      <eOperations xsi:type="activities:MoflonEOperation" name="preprocessAccesses">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eParameters name="model">
+          <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

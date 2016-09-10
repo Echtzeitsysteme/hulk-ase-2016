@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.gravity.eval.ase.deltas/gen" modelPluginID="org.gravity.eval.ase.deltas"
+    modelName="Deltas" updateClasspath="false" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.eclipse.gmt.modisco.java/model/java.genmodel#//java platform:/plugin/org.gravity.modisco/model/Modisco.genmodel#//modisco"
+    operationReflection="true">
+  <foreignModel>Deltas.ecore</foreignModel>
+  <genPackages prefix="Deltas" basePackage="org.gravity.eval.ase" disposableProviderFactory="true"
+      ecorePackage="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#/">
+    <genClasses image="false" ecoreClass="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//Delta">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//Delta/getProjectName"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//Delta/perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//Delta/perform/modisco"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//DeleteMethod">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//DeleteMethod/getProjectName"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//DeleteMethod/perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//DeleteMethod/perform/modisco"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//RenameClass">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//RenameClass/getProjectName"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//RenameClass/perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//RenameClass/perform/modisco"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//RenameClass/rename">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//RenameClass/rename/mclass"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//CreateMethod">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//CreateMethod/getProjectName"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//CreateMethod/perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//CreateMethod/perform/modisco"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//CreateClass">
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//CreateClass/getProjectName"/>
+      <genOperations ecoreOperation="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//CreateClass/perform">
+        <genParameters ecoreParameter="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore#//CreateClass/perform/modisco"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

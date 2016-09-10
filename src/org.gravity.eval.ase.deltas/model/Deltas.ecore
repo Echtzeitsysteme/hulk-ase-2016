@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activities="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//activities" xmlns:callExpressions="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//calls/callExpressions" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:expressions="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//expressions" xmlns:patternExpressions="platform:/plugin/SDMLanguage/model/SDMLanguage.ecore#//patterns/patternExpressions" name="deltas" nsURI="platform:/plugin/org.gravity.eval.ase.deltas/model/Deltas.ecore" nsPrefix="org.gravity.eval.ase.deltas">
+  <eClassifiers xsi:type="ecore:EClass" name="Delta" abstract="true">
+    <eOperations xsi:type="activities:MoflonEOperation" name="getProjectName">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="perform">
+      <eParameters name="modisco">
+        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeleteMethod" eSuperTypes="//Delta">
+    <eOperations xsi:type="activities:MoflonEOperation" name="getProjectName">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <activity owningOperation="//DeleteMethod/getProjectName">
+        <ownedActivityEdge source="//DeleteMethod/getProjectName/@activity/@ownedActivityNode.0" target="//DeleteMethod/getProjectName/@activity/@ownedActivityNode.2"/>
+        <ownedActivityEdge source="//DeleteMethod/getProjectName/@activity/@ownedActivityNode.2" target="//DeleteMethod/getProjectName/@activity/@ownedActivityNode.1"/>
+        <ownedActivityNode xsi:type="activities:StartNode" outgoing="//DeleteMethod/getProjectName/@activity/@ownedActivityEdge.0"/>
+        <ownedActivityNode xsi:type="activities:StopNode" incoming="//DeleteMethod/getProjectName/@activity/@ownedActivityEdge.1">
+          <returnValue xsi:type="expressions:LiteralExpression" value="&quot;04_Gantt1.10.2&quot;"/>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode8" comment="ActivityNode8" outgoing="//DeleteMethod/getProjectName/@activity/@ownedActivityEdge.1" incoming="//DeleteMethod/getProjectName/@activity/@ownedActivityEdge.0">
+          <storyPattern comment="ActivityNode8"/>
+        </ownedActivityNode>
+      </activity>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="perform">
+      <eParameters name="modisco">
+        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+      </eParameters>
+      <activity owningOperation="//DeleteMethod/perform">
+        <ownedActivityEdge source="//DeleteMethod/perform/@activity/@ownedActivityNode.0" target="//DeleteMethod/perform/@activity/@ownedActivityNode.1"/>
+        <ownedActivityEdge source="//DeleteMethod/perform/@activity/@ownedActivityNode.1" target="//DeleteMethod/perform/@activity/@ownedActivityNode.2"/>
+        <ownedActivityEdge source="//DeleteMethod/perform/@activity/@ownedActivityNode.2" target="//DeleteMethod/perform/@activity/@ownedActivityNode.3" guard="END"/>
+        <ownedActivityEdge source="//DeleteMethod/perform/@activity/@ownedActivityNode.3" target="//DeleteMethod/perform/@activity/@ownedActivityNode.4" guard="END"/>
+        <ownedActivityEdge source="//DeleteMethod/perform/@activity/@ownedActivityNode.4" target="//DeleteMethod/perform/@activity/@ownedActivityNode.5" guard="END"/>
+        <ownedActivityEdge source="//DeleteMethod/perform/@activity/@ownedActivityNode.5" target="//DeleteMethod/perform/@activity/@ownedActivityNode.6"/>
+        <ownedActivityEdge source="//DeleteMethod/perform/@activity/@ownedActivityNode.6" target="//DeleteMethod/perform/@activity/@ownedActivityNode.7"/>
+        <ownedActivityEdge source="//DeleteMethod/perform/@activity/@ownedActivityNode.7" target="//DeleteMethod/perform/@activity/@ownedActivityNode.9" guard="END"/>
+        <ownedActivityEdge source="//DeleteMethod/perform/@activity/@ownedActivityNode.9" target="//DeleteMethod/perform/@activity/@ownedActivityNode.8"/>
+        <ownedActivityNode xsi:type="activities:StartNode" outgoing="//DeleteMethod/perform/@activity/@ownedActivityEdge.0"/>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode1" comment="ActivityNode1" outgoing="//DeleteMethod/perform/@activity/@ownedActivityEdge.1" incoming="//DeleteMethod/perform/@activity/@ownedActivityEdge.0">
+          <storyPattern comment="ActivityNode1">
+            <objectVariable name="modisco" incomingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
+            </objectVariable>
+            <objectVariable name="p_net" incomingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1" outgoingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;net&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="p_sourceforge" incomingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.2" outgoingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;sourceforge&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="p_ganttproject" outgoingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.2 //DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.3">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;ganttproject&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.3">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="c_GanttProject" incomingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.4 //DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.3">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;GanttProject&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.4">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="m_main" outgoingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.4">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;main&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.5">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <linkVariable name="model" target="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0" source="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/model"/>
+            </linkVariable>
+            <linkVariable name="package" target="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1" source="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/package"/>
+            </linkVariable>
+            <linkVariable name="package" target="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2" source="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.3">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/package"/>
+            </linkVariable>
+            <linkVariable name="ownedElements" target="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.4" source="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.3">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
+            </linkVariable>
+            <linkVariable name="abstractTypeDeclaration" target="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.4" source="//DeleteMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.5">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode2" comment="ActivityNode2" outgoing="//DeleteMethod/perform/@activity/@ownedActivityEdge.2" incoming="//DeleteMethod/perform/@activity/@ownedActivityEdge.1" forEach="true">
+          <storyPattern comment="ActivityNode2">
+            <objectVariable name="m_main" incomingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+            </objectVariable>
+            <objectVariable name="parameter" outgoingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0" bindingOperator="DESTROY">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration"/>
+            </objectVariable>
+            <linkVariable name="methodDeclaration" target="//DeleteMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//DeleteMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1" bindingOperator="DESTROY">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration/methodDeclaration"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode3" comment="ActivityNode3" outgoing="//DeleteMethod/perform/@activity/@ownedActivityEdge.3" incoming="//DeleteMethod/perform/@activity/@ownedActivityEdge.2" forEach="true">
+          <storyPattern comment="ActivityNode3">
+            <objectVariable name="m_main" outgoingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+            </objectVariable>
+            <objectVariable name="exceptions" incomingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.3/@storyPattern/@linkVariable.0" bindingOperator="DESTROY">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+            </objectVariable>
+            <linkVariable name="thrownExceptions" target="//DeleteMethod/perform/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.1" source="//DeleteMethod/perform/@activity/@ownedActivityNode.3/@storyPattern/@objectVariable.0" bindingOperator="DESTROY">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration/thrownExceptions"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode4" comment="ActivityNode4" outgoing="//DeleteMethod/perform/@activity/@ownedActivityEdge.4" incoming="//DeleteMethod/perform/@activity/@ownedActivityEdge.3" forEach="true">
+          <storyPattern comment="ActivityNode4">
+            <objectVariable name="m_main" outgoingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
+            </objectVariable>
+            <objectVariable name="typeparam" incomingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.4/@storyPattern/@linkVariable.0" bindingOperator="DESTROY">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeParameter"/>
+            </objectVariable>
+            <linkVariable name="typeParameters" target="//DeleteMethod/perform/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.1" source="//DeleteMethod/perform/@activity/@ownedActivityNode.4/@storyPattern/@objectVariable.0" bindingOperator="DESTROY">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration/typeParameters"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode5" comment="ActivityNode5" outgoing="//DeleteMethod/perform/@activity/@ownedActivityEdge.5" incoming="//DeleteMethod/perform/@activity/@ownedActivityEdge.4">
+          <storyPattern comment="ActivityNode5">
+            <objectVariable name="m_main" outgoingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.5/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
+            </objectVariable>
+            <objectVariable name="returntype" incomingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.5/@storyPattern/@linkVariable.0" bindingOperator="DESTROY">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+            </objectVariable>
+            <linkVariable name="returnType" target="//DeleteMethod/perform/@activity/@ownedActivityNode.5/@storyPattern/@objectVariable.1" source="//DeleteMethod/perform/@activity/@ownedActivityNode.5/@storyPattern/@objectVariable.0" bindingOperator="DESTROY">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration/returnType"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode6" comment="ActivityNode6" outgoing="//DeleteMethod/perform/@activity/@ownedActivityEdge.6" incoming="//DeleteMethod/perform/@activity/@ownedActivityEdge.5">
+          <storyPattern comment="ActivityNode6">
+            <objectVariable name="m_main" outgoingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
+            </objectVariable>
+            <objectVariable name="block" incomingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.6/@storyPattern/@linkVariable.0" bindingOperator="DESTROY">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Block"/>
+            </objectVariable>
+            <linkVariable name="body" target="//DeleteMethod/perform/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.1" source="//DeleteMethod/perform/@activity/@ownedActivityNode.6/@storyPattern/@objectVariable.0" bindingOperator="DESTROY">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration/body"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode7" comment="ActivityNode7" outgoing="//DeleteMethod/perform/@activity/@ownedActivityEdge.7" incoming="//DeleteMethod/perform/@activity/@ownedActivityEdge.6" forEach="true">
+          <storyPattern comment="ActivityNode7">
+            <objectVariable name="m_main" outgoingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+            </objectVariable>
+            <objectVariable name="invoc" incomingLink="//DeleteMethod/perform/@activity/@ownedActivityNode.7/@storyPattern/@linkVariable.0" bindingOperator="DESTROY">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodInvocation"/>
+            </objectVariable>
+            <linkVariable name="abstractMethodInvocations" target="//DeleteMethod/perform/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.1" source="//DeleteMethod/perform/@activity/@ownedActivityNode.7/@storyPattern/@objectVariable.0" bindingOperator="DESTROY">
+              <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MDefinition/abstractMethodInvocations"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StopNode" incoming="//DeleteMethod/perform/@activity/@ownedActivityEdge.8"/>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode18" comment="ActivityNode18" outgoing="//DeleteMethod/perform/@activity/@ownedActivityEdge.8" incoming="//DeleteMethod/perform/@activity/@ownedActivityEdge.7">
+          <storyPattern comment="ActivityNode18">
+            <objectVariable name="m_main" bindingOperator="DESTROY" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
+            </objectVariable>
+          </storyPattern>
+        </ownedActivityNode>
+      </activity>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RenameClass" eSuperTypes="//Delta">
+    <eOperations xsi:type="activities:MoflonEOperation" name="getProjectName">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <activity owningOperation="//RenameClass/getProjectName">
+        <ownedActivityEdge source="//RenameClass/getProjectName/@activity/@ownedActivityNode.0" target="//RenameClass/getProjectName/@activity/@ownedActivityNode.1"/>
+        <ownedActivityEdge source="//RenameClass/getProjectName/@activity/@ownedActivityNode.1" target="//RenameClass/getProjectName/@activity/@ownedActivityNode.2"/>
+        <ownedActivityNode xsi:type="activities:StartNode" outgoing="//RenameClass/getProjectName/@activity/@ownedActivityEdge.0"/>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode9" comment="ActivityNode9" outgoing="//RenameClass/getProjectName/@activity/@ownedActivityEdge.1" incoming="//RenameClass/getProjectName/@activity/@ownedActivityEdge.0">
+          <storyPattern comment="ActivityNode9"/>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StopNode" incoming="//RenameClass/getProjectName/@activity/@ownedActivityEdge.1">
+          <returnValue xsi:type="expressions:LiteralExpression" value="&quot;01_QuickUML2001&quot;"/>
+        </ownedActivityNode>
+      </activity>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="perform">
+      <eParameters name="modisco">
+        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+      </eParameters>
+      <activity owningOperation="//RenameClass/perform">
+        <ownedActivityEdge source="//RenameClass/perform/@activity/@ownedActivityNode.0" target="//RenameClass/perform/@activity/@ownedActivityNode.1"/>
+        <ownedActivityEdge source="//RenameClass/perform/@activity/@ownedActivityNode.1" target="//RenameClass/perform/@activity/@ownedActivityNode.2"/>
+        <ownedActivityNode xsi:type="activities:StartNode" outgoing="//RenameClass/perform/@activity/@ownedActivityEdge.0"/>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode10" comment="ActivityNode10" outgoing="//RenameClass/perform/@activity/@ownedActivityEdge.1" incoming="//RenameClass/perform/@activity/@ownedActivityEdge.0">
+          <storyPattern comment="ActivityNode10">
+            <objectVariable name="modisco" incomingLink="//RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
+            </objectVariable>
+            <objectVariable name="p_quj" outgoingLink="//RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0 //RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;quj&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="c_boxpanel" incomingLink="//RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;BoxPanel&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable type="//RenameClass" name="this" bindingState="BOUND"/>
+            <linkVariable name="model" target="//RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0" source="//RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/model"/>
+            </linkVariable>
+            <linkVariable name="ownedElements" target="//RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2" source="//RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StopNode" incoming="//RenameClass/perform/@activity/@ownedActivityEdge.1">
+          <returnValue xsi:type="callExpressions:MethodCallExpression" callee="//RenameClass/rename">
+            <ownedParameterBindings parameter="//RenameClass/rename/mclass">
+              <valueExpression xsi:type="patternExpressions:ObjectVariableExpression" object="//RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2"/>
+            </ownedParameterBindings>
+            <target xsi:type="patternExpressions:ObjectVariableExpression" object="//RenameClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.3"/>
+          </returnValue>
+        </ownedActivityNode>
+      </activity>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="rename">
+      <eParameters name="mclass">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateMethod" eSuperTypes="//Delta">
+    <eOperations xsi:type="activities:MoflonEOperation" name="getProjectName">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <activity owningOperation="//CreateMethod/getProjectName">
+        <ownedActivityEdge source="//CreateMethod/getProjectName/@activity/@ownedActivityNode.0" target="//CreateMethod/getProjectName/@activity/@ownedActivityNode.1"/>
+        <ownedActivityEdge source="//CreateMethod/getProjectName/@activity/@ownedActivityNode.1" target="//CreateMethod/getProjectName/@activity/@ownedActivityNode.2"/>
+        <ownedActivityNode xsi:type="activities:StartNode" outgoing="//CreateMethod/getProjectName/@activity/@ownedActivityEdge.0"/>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode12" comment="ActivityNode12" outgoing="//CreateMethod/getProjectName/@activity/@ownedActivityEdge.1" incoming="//CreateMethod/getProjectName/@activity/@ownedActivityEdge.0">
+          <storyPattern comment="ActivityNode12"/>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StopNode" incoming="//CreateMethod/getProjectName/@activity/@ownedActivityEdge.1">
+          <returnValue xsi:type="expressions:LiteralExpression" value="&quot;04_Gantt1.10.2&quot;"/>
+        </ownedActivityNode>
+      </activity>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="perform">
+      <eParameters name="modisco">
+        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+      </eParameters>
+      <activity owningOperation="//CreateMethod/perform">
+        <ownedActivityEdge source="//CreateMethod/perform/@activity/@ownedActivityNode.0" target="//CreateMethod/perform/@activity/@ownedActivityNode.1"/>
+        <ownedActivityEdge source="//CreateMethod/perform/@activity/@ownedActivityNode.1" target="//CreateMethod/perform/@activity/@ownedActivityNode.2"/>
+        <ownedActivityEdge source="//CreateMethod/perform/@activity/@ownedActivityNode.2" target="//CreateMethod/perform/@activity/@ownedActivityNode.3"/>
+        <ownedActivityNode xsi:type="activities:StartNode" outgoing="//CreateMethod/perform/@activity/@ownedActivityEdge.0"/>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode13" comment="ActivityNode13" outgoing="//CreateMethod/perform/@activity/@ownedActivityEdge.1" incoming="//CreateMethod/perform/@activity/@ownedActivityEdge.0">
+          <storyPattern comment="ActivityNode13">
+            <objectVariable name="modisco" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+            </objectVariable>
+            <objectVariable name="p_net" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;net&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="p_sourceforge" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.2" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;sourceforge&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="p_ganttproject" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.3" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.2">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;ganttproject&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.3">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="p_gui" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.4" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.3">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;gui&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.4">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="p_taskproperties" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.4 //CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.5">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;taskproperties&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.5">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="c_commponpanel" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.5">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;CommonPanel&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.6">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <linkVariable name="model" target="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0" source="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/model"/>
+            </linkVariable>
+            <linkVariable name="package" target="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1" source="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/package"/>
+            </linkVariable>
+            <linkVariable name="package" target="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2" source="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.3">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/package"/>
+            </linkVariable>
+            <linkVariable name="package" target="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.3" source="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.4">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/package"/>
+            </linkVariable>
+            <linkVariable name="package" target="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.4" source="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.5">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/package"/>
+            </linkVariable>
+            <linkVariable name="ownedElements" target="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.6" source="//CreateMethod/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.5">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode14" comment="ActivityNode14" outgoing="//CreateMethod/perform/@activity/@ownedActivityEdge.2" incoming="//CreateMethod/perform/@activity/@ownedActivityEdge.1">
+          <storyPattern comment="ActivityNode14">
+            <objectVariable name="c_commponpanel" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.7" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+            </objectVariable>
+            <objectVariable name="m_setupCommonFields_new" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.4" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.1 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.2 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.3 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.5 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.6" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition"/>
+              <attributeAssignment>
+                <valueExpression xsi:type="expressions:LiteralExpression" value="&quot;setupCommonFields&quot;"/>
+                <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+              </attributeAssignment>
+            </objectVariable>
+            <objectVariable name="t_1_new" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.3" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.13" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+            </objectVariable>
+            <objectVariable name="m_setupCommonFields" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.7 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.8">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;setupCommonFields&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="cu" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.0 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.2 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.9 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.14 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.17">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit"/>
+            </objectVariable>
+            <objectVariable name="ret" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.18" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.9 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.10" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ReturnStatement"/>
+            </objectVariable>
+            <objectVariable name="ac" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.10 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.11" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableAccess"/>
+            </objectVariable>
+            <objectVariable name="modisco" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.5" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+            </objectVariable>
+            <objectVariable name="t_1" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.8" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.12">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+            </objectVariable>
+            <objectVariable name="c_jpanel" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.12 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.16 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.13">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+            </objectVariable>
+            <objectVariable name="s_param" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.14 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.15 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.4 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.11" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration"/>
+              <attributeAssignment>
+                <valueExpression xsi:type="expressions:LiteralExpression" value="&quot;s&quot;"/>
+                <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+              </attributeAssignment>
+            </objectVariable>
+            <objectVariable name="t_2_new" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.15" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.16" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess"/>
+            </objectVariable>
+            <objectVariable name="b" incomingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.6" outgoingLink="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.17 //CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@linkVariable.18" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Block"/>
+            </objectVariable>
+            <linkVariable name="originalCompilationUnit" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ASTNode/originalCompilationUnit"/>
+            </linkVariable>
+            <linkVariable name="abstractTypeDeclaration" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
+            </linkVariable>
+            <linkVariable name="originalCompilationUnit" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ASTNode/originalCompilationUnit"/>
+            </linkVariable>
+            <linkVariable name="returnType" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration/returnType"/>
+            </linkVariable>
+            <linkVariable name="methodDeclaration" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.10" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration/methodDeclaration"/>
+            </linkVariable>
+            <linkVariable name="model" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.7" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+              <type href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MMethodDefinition/model"/>
+            </linkVariable>
+            <linkVariable name="body" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.12" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.1" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//AbstractMethodDeclaration/body"/>
+            </linkVariable>
+            <linkVariable name="abstractTypeDeclaration" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.0" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//BodyDeclaration/abstractTypeDeclaration"/>
+            </linkVariable>
+            <linkVariable name="returnType" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.8" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.3">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//MethodDeclaration/returnType"/>
+            </linkVariable>
+            <linkVariable name="originalCompilationUnit" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.5" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ASTNode/originalCompilationUnit"/>
+            </linkVariable>
+            <linkVariable name="expression" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.6" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.5" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ReturnStatement/expression"/>
+            </linkVariable>
+            <linkVariable name="usageInVariableAccess" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.6" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.10" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//VariableDeclaration/usageInVariableAccess"/>
+            </linkVariable>
+            <linkVariable name="type" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.9" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.8">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
+            </linkVariable>
+            <linkVariable name="type" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.9" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.2" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
+            </linkVariable>
+            <linkVariable name="originalCompilationUnit" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.10" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ASTNode/originalCompilationUnit"/>
+            </linkVariable>
+            <linkVariable name="type" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.11" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.10" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//SingleVariableDeclaration/type"/>
+            </linkVariable>
+            <linkVariable name="type" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.9" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.11" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//TypeAccess/type"/>
+            </linkVariable>
+            <linkVariable name="originalCompilationUnit" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.4" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.12" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ASTNode/originalCompilationUnit"/>
+            </linkVariable>
+            <linkVariable name="statements" target="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.5" source="//CreateMethod/perform/@activity/@ownedActivityNode.2/@storyPattern/@objectVariable.12" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Block/statements"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StopNode" incoming="//CreateMethod/perform/@activity/@ownedActivityEdge.2"/>
+      </activity>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreateClass" eSuperTypes="//Delta">
+    <eOperations xsi:type="activities:MoflonEOperation" name="getProjectName">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <activity owningOperation="//CreateClass/getProjectName">
+        <ownedActivityEdge source="//CreateClass/getProjectName/@activity/@ownedActivityNode.0" target="//CreateClass/getProjectName/@activity/@ownedActivityNode.1"/>
+        <ownedActivityEdge source="//CreateClass/getProjectName/@activity/@ownedActivityNode.1" target="//CreateClass/getProjectName/@activity/@ownedActivityNode.2"/>
+        <ownedActivityNode xsi:type="activities:StartNode" outgoing="//CreateClass/getProjectName/@activity/@ownedActivityEdge.0"/>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode16" comment="ActivityNode16" outgoing="//CreateClass/getProjectName/@activity/@ownedActivityEdge.1" incoming="//CreateClass/getProjectName/@activity/@ownedActivityEdge.0">
+          <storyPattern comment="ActivityNode16"/>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StopNode" incoming="//CreateClass/getProjectName/@activity/@ownedActivityEdge.1">
+          <returnValue xsi:type="expressions:LiteralExpression" value="&quot;07_JHotDraw7.6&quot;"/>
+        </ownedActivityNode>
+      </activity>
+    </eOperations>
+    <eOperations xsi:type="activities:MoflonEOperation" name="perform">
+      <eParameters name="modisco">
+        <eType xsi:type="ecore:EClass" href="platform:/plugin/org.gravity.modisco/model/Modisco.ecore#//MGravityModel"/>
+      </eParameters>
+      <activity owningOperation="//CreateClass/perform">
+        <ownedActivityEdge source="//CreateClass/perform/@activity/@ownedActivityNode.0" target="//CreateClass/perform/@activity/@ownedActivityNode.1"/>
+        <ownedActivityEdge source="//CreateClass/perform/@activity/@ownedActivityNode.1" target="//CreateClass/perform/@activity/@ownedActivityNode.2"/>
+        <ownedActivityNode xsi:type="activities:StartNode" outgoing="//CreateClass/perform/@activity/@ownedActivityEdge.0"/>
+        <ownedActivityNode xsi:type="activities:StoryNode" name="ActivityNode17" comment="ActivityNode17" outgoing="//CreateClass/perform/@activity/@ownedActivityEdge.1" incoming="//CreateClass/perform/@activity/@ownedActivityEdge.0">
+          <storyPattern comment="ActivityNode17">
+            <objectVariable name="modisco" incomingLink="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1" outgoingLink="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0" bindingState="BOUND">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model"/>
+            </objectVariable>
+            <objectVariable name="p_org" incomingLink="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.2" outgoingLink="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.1">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;org&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="p_jhotdraw" incomingLink="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.5" outgoingLink="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.2 //CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.3">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package"/>
+              <constraint>
+                <constraintExpression xsi:type="expressions:ComparisonExpression" operator="EQUAL">
+                  <rightExpression xsi:type="expressions:LiteralExpression" value="&quot;jhotdraw&quot;"/>
+                  <leftExpression xsi:type="patternExpressions:AttributeValueExpression" object="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2">
+                    <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+                  </leftExpression>
+                </constraintExpression>
+              </constraint>
+            </objectVariable>
+            <objectVariable name="c_new" incomingLink="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.6 //CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.3" outgoingLink="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.4" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ClassDeclaration"/>
+              <attributeAssignment>
+                <valueExpression xsi:type="expressions:LiteralExpression" value="&quot;NewClass&quot;"/>
+                <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+              </attributeAssignment>
+              <attributeAssignment>
+                <valueExpression xsi:type="expressions:LiteralExpression" value="false"/>
+                <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/proxy"/>
+              </attributeAssignment>
+            </objectVariable>
+            <objectVariable name="cu_new" incomingLink="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.0 //CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.4" outgoingLink="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.5 //CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@linkVariable.6" bindingOperator="CREATE">
+              <type xsi:type="ecore:EClass" href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit"/>
+              <attributeAssignment>
+                <valueExpression xsi:type="expressions:LiteralExpression" value="&quot;NewClass.java&quot;"/>
+                <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/name"/>
+              </attributeAssignment>
+              <attributeAssignment>
+                <valueExpression xsi:type="expressions:LiteralExpression" value="false"/>
+                <attribute href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//NamedElement/proxy"/>
+              </attributeAssignment>
+            </objectVariable>
+            <linkVariable name="compilationUnits" target="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.4" source="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Model/compilationUnits"/>
+            </linkVariable>
+            <linkVariable name="model" target="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.0" source="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/model"/>
+            </linkVariable>
+            <linkVariable name="package" target="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.1" source="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/package"/>
+            </linkVariable>
+            <linkVariable name="ownedElements" target="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.3" source="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//Package/ownedElements"/>
+            </linkVariable>
+            <linkVariable name="originalCompilationUnit" target="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.4" source="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.3" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//ASTNode/originalCompilationUnit"/>
+            </linkVariable>
+            <linkVariable name="package" target="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.2" source="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.4" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit/package"/>
+            </linkVariable>
+            <linkVariable name="types" target="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.3" source="//CreateClass/perform/@activity/@ownedActivityNode.1/@storyPattern/@objectVariable.4" bindingOperator="CREATE">
+              <type href="http://www.eclipse.org/MoDisco/Java/0.2.incubation/java#//CompilationUnit/types"/>
+            </linkVariable>
+          </storyPattern>
+        </ownedActivityNode>
+        <ownedActivityNode xsi:type="activities:StopNode" incoming="//CreateClass/perform/@activity/@ownedActivityEdge.1"/>
+      </activity>
+    </eOperations>
+  </eClassifiers>
+</ecore:EPackage>
