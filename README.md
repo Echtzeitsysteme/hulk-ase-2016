@@ -29,8 +29,9 @@ as well as a remarkable gain in efficiency due to information reuse.
 - Eclipse Modeling Tools (tested with Mars.2)
 - Eclipse plug-ins:
   * Xtext (available at the Eclipse Marketplace)
-  * MoDisco (available at the Eclipse Marketplace)
+  * MoDisco (available at the Eclipse Modeling Components)
   * eMoflon (installation instructions at [http://www.emoflon.org](http://www.emoflon.org))
+- SourceMeter (https://www.sourcemeter.com/)
   
 
 ### Installation:
@@ -39,6 +40,7 @@ as well as a remarkable gain in efficiency due to information reuse.
 2. Import HULK as Eclipse projects
 3. Launch a fresh Eclipse instance from the workspace containing the HULK projects
 4. Import source code of Java projects to be analysed into the freshly opened workspace
+5. Create an environment variable "SOURCE_METER_JAVA" pointing to the SourceMeterJava executable
 
 ### Usage:
 
