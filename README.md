@@ -1,3 +1,12 @@
+The the Hulk tool has been integrated into the GRaViTY tool: https://github.com/GRaViTY-Tool
+
+This repository only hosts the version presented on [ASE 2016](http://ase-conferences.org/ase/past/ase2016/ase2016.org/home-2.html) in Singapore and will not receive any maintenance.
+Please use the GRaViTY tool if you are not explicitly interested in this specific version of Hulk.
+
+The work contained in this repository has been published as:
+
+[Sven Peldszus, Géza Kulcsár, Malte Lochau, Sandro Schulze: Continuous Detection of Design Flaws in Evolving Object-Oriented Programs using Incremental Multi-pattern Matching. In: Proceedings of the 31st International Conference on Automated Software Engineering (ASE), September 2016](https://doi.org/10.1145/2970276.2970338)
+
 # HULK - Continuous Object-Oriented Design-Flaw Detection
 
 Design flaws in object-oriented programs may seriously corrupt code 
